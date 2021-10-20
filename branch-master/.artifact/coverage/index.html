@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>coverage-report</title>
+<title>V8 Coverage Report</title>
 <style>
-/* csslint ignore:start */
+/* jslint utility2:true */
+/*csslint ignore:start*/
 * {
 box-sizing: border-box;
     font-family: consolas, menlo, monospace;
 }
-/* csslint ignore:end */
+/*csslint ignore:end*/
 body {
     margin: 0;
 }
@@ -41,6 +42,9 @@ body {
 .coverage .footer,
 .coverage .header {
     padding: 20px;
+}
+.coverage .footer {
+    text-align: center;
 }
 .coverage .percentbar {
     height: 12px;
@@ -79,6 +83,7 @@ body {
 .coverage .coverageMedium{
     background: #fd7;
 }
+.coverage .footer,
 .coverage .header {
     background: #ddd;
 }
@@ -106,51 +111,62 @@ body {
 </style>
 </head>
 <body class="coverage">
+<!-- header start -->
 <div class="header">
-<div class="title">coverage-report</div>
+<div class="title">V8 Coverage Report</div>
 <table>
 <thead>
-<tr>
-<th>files covered</th>
-<th>lines</th>
-</tr>
+    <tr>
+    <th>Files covered</th>
+    <th>Lines</th>
+    </tr>
 </thead>
-<tbody><tr>
-<td class="coverageHigh">
-            <a href="index.html">./ </a><br>
-<div class="percentbar">
-    <div style="width: 100.00%;"></div>
+<tbody>
+<tr>
+    <td class="coverageHigh">
+            <a href="index.html">. / </a><br>
+        <div class="percentbar">
+            <div style="width: 100.00%;"></div>
+        </div>
+    </td>
+    <td style="text-align: right;">
+         100.00 %<br>
+        11871 / 11871
+    </td>
+    </tr>
+<tr>
+    <td class="coverageHigh">
+            <a href="jslint.mjs.html">. / jslint.mjs</a><br>
+        <div class="percentbar">
+            <div style="width: 100.00%;"></div>
+        </div>
+    </td>
+    <td style="text-align: right;">
+         100.00 %<br>
+        10933 / 10933
+    </td>
+    </tr>
+<tr>
+    <td class="coverageHigh">
+            <a href="test.mjs.html">. / test.mjs</a><br>
+        <div class="percentbar">
+            <div style="width: 100.00%;"></div>
+        </div>
+    </td>
+    <td style="text-align: right;">
+         100.00 %<br>
+        938 / 938
+    </td>
+    </tr>
+</tbody>
+</table>
 </div>
-</td>
-<td style="text-align: right;">
-     100.00 %<br>
-    8734 / 8734
-</td>
-</tr><tr>
-<td class="coverageHigh">
-            <a href="jslint.mjs.html">./ jslint.mjs</a><br>
-<div class="percentbar">
-    <div style="width: 100.00%;"></div>
-</div>
-</td>
-<td style="text-align: right;">
-     100.00 %<br>
-    8294 / 8294
-</td>
-</tr><tr>
-<td class="coverageHigh">
-            <a href="test.mjs.html">./ test.mjs</a><br>
-<div class="percentbar">
-    <div style="width: 100.00%;"></div>
-</div>
-</td>
-<td style="text-align: right;">
-     100.00 %<br>
-    440 / 440
-</td>
-</tr>
-</div>
-<div class="coverageFooter">
+<!-- header end -->
+<div class="footer">
+    [
+    This document was created with
+    <a href="https://github.com/jslint-org/jslint">JSLint</a>
+    ]
 </div>
 </body>
 </html>

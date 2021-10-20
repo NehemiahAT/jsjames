@@ -1,7 +1,7 @@
-[<img align="left" height="100" src="asset-image-logo-512.svg"/>](https://github.com/jslint-org/jslint)
+[<img align="left" height="100" src="asset_image_logo_512.svg"/>](https://github.com/jslint-org/jslint)
 
 
-# JSLint, The JavaScript Code Quality Tool
+# JSLint, The JavaScript Code Quality and Coverage Tool
 
 &nbsp;
 
@@ -9,28 +9,53 @@ Douglas Crockford <douglas@crockford.com>
 
 
 # Status
-| Branch | [master<br>(v2021.9.20)](https://github.com/jslint-org/jslint/tree/master) | [beta<br>(Web Demo)](https://github.com/jslint-org/jslint/tree/beta) | [alpha<br>(Development)](https://github.com/jslint-org/jslint/tree/alpha) |
+| Branch | [master<br>(v2021.10.20)](https://github.com/jslint-org/jslint/tree/master) | [beta<br>(Web Demo)](https://github.com/jslint-org/jslint/tree/beta) | [alpha<br>(Development)](https://github.com/jslint-org/jslint/tree/alpha) |
 |--:|:--:|:--:|:--:|
 | CI | [![ci](https://github.com/jslint-org/jslint/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/jslint-org/jslint/actions?query=branch%3Amaster) | [![ci](https://github.com/jslint-org/jslint/actions/workflows/ci.yml/badge.svg?branch=beta)](https://github.com/jslint-org/jslint/actions?query=branch%3Abeta) | [![ci](https://github.com/jslint-org/jslint/actions/workflows/ci.yml/badge.svg?branch=alpha)](https://github.com/jslint-org/jslint/actions?query=branch%3Aalpha) |
-| Coverage | [![coverage](https://jslint-org.github.io/jslint/branch-master/.build/coverage/coverage-badge.svg)](https://jslint-org.github.io/jslint/branch-master/.build/coverage/index.html) | [![coverage](https://jslint-org.github.io/jslint/branch-master/.build/coverage/coverage-badge.svg)](https://jslint-org.github.io/jslint/branch-master/.build/coverage/index.html) | [![coverage](https://jslint-org.github.io/jslint/branch-master/.build/coverage/coverage-badge.svg)](https://jslint-org.github.io/jslint/branch-master/.build/coverage/index.html) |
-| Demo | [<img src="asset-image-logo-512.svg" height="32">](https://jslint-org.github.io/jslint/branch-master/index.html) | [<img src="asset-image-logo-512.svg" height="32">](https://jslint-org.github.io/jslint/branch-master/index.html) | [<img src="asset-image-logo-512.svg" height="32">](https://jslint-org.github.io/jslint/branch-master/index.html) |
-| Artifacts | [<img src="asset-image-folder-open-solid.svg" height="30">](https://github.com/jslint-org/jslint/tree/gh-pages/branch-master/.build) | [<img src="asset-image-folder-open-solid.svg" height="30">](https://github.com/jslint-org/jslint/tree/gh-pages/branch-master/.build) | [<img src="asset-image-folder-open-solid.svg" height="30">](https://github.com/jslint-org/jslint/tree/gh-pages/branch-master/.build) |
+| Coverage | [![coverage](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage/coverage_badge.svg)](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage/index.html) | [![coverage](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage/coverage_badge.svg)](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage/index.html) | [![coverage](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage/coverage_badge.svg)](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage/index.html) |
+| Demo | [<img src="asset_image_logo_512.svg" height="32">](https://jslint-org.github.io/jslint/branch-master/index.html) | [<img src="asset_image_logo_512.svg" height="32">](https://jslint-org.github.io/jslint/branch-master/index.html) | [<img src="asset_image_logo_512.svg" height="32">](https://jslint-org.github.io/jslint/branch-master/index.html) |
+| Artifacts | [<img src="asset_image_folder_open_solid.svg" height="30">](https://github.com/jslint-org/jslint/tree/gh-pages/branch-master/.artifact) | [<img src="asset_image_folder_open_solid.svg" height="30">](https://github.com/jslint-org/jslint/tree/gh-pages/branch-master/.artifact) | [<img src="asset_image_folder_open_solid.svg" height="30">](https://github.com/jslint-org/jslint/tree/gh-pages/branch-master/.artifact) |
 
 
 # Table of Contents
+
 1. [Web Demo](#web-demo)
+
 2. [Web Demo Archived](#web-demo-archived)
-3. [Install](#install)
-4. [Description](#description)
-5. [Package Listing](#package-listing)
-6. [Changelog](#changelog)
-7. [License](#license)
+
+3. [API Doc](#api-doc)
+
+4. [Quickstart Install](#quickstart-install)
+    - [To install, just download https://www.jslint.com/jslint.mjs and save to file:](#to-install-just-download-httpswwwjslintcomjslintmjs-and-save-to-file)
+    - [To run `jslint.mjs` in shell:](#to-run-jslintmjs-in-shell)
+    - [To import `jslint.mjs` in ES Module environment:](#to-import-jslintmjs-in-es-module-environment)
+    - [To import `jslint.mjs` in CommonJS environment:](#to-import-jslintmjs-in-commonjs-environment)
+    - [To JSLint entire directory in shell:](#to-jslint-entire-directory-in-shell)
+
+5. [Quickstart JSLint Report](#quickstart-jslint-report)
+    - [To create a JSLint report in shell:](#to-create-a-jslint-report-in-shell)
+    - [To create a JSLint report in javascript:](#to-create-a-jslint-report-in-javascript)
+
+6. [Quickstart V8 Coverage Report](#quickstart-v8-coverage-report)
+    - [To create V8 coverage report from Node.js / Npm program in shell:](#to-create-v8-coverage-report-from-nodejs--npm-program-in-shell)
+    - [To create V8 coverage report from Node.js / Npm program in javascript:](#to-create-v8-coverage-report-from-nodejs--npm-program-in-javascript)
+
+7. [Plugin Vim](#plugin-vim)
+    - [To run JSLint inside vim:](#to-run-jslint-inside-vim)
+
+8. [Description](#description)
+
+9. [Package Listing](#package-listing)
+
+10. [Changelog](#changelog)
+
+11. [License](#license)
 
 
 # Web Demo
 - https://www.jslint.com
 
-[![screenshot](https://jslint-org.github.io/jslint/branch-master/.build/screenshot-browser-_2fjslint_2fbranch-beta_2findex.html.png)](https://jslint-org.github.io/jslint/index.html)
+[![screenshot](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_browser__2fjslint_2fbranch-beta_2findex.html.png)](https://jslint-org.github.io/jslint/index.html)
 
 
 # Web Demo Archived
@@ -39,19 +64,25 @@ Douglas Crockford <douglas@crockford.com>
 - [Web Demo 2013 (ES5, CSS, HTML)](https://www.jslint.com/branch-v2013.3.13/jslint.html)
 
 
-# Install
-## To install, just download https://www.jslint.com/jslint.mjs and save to file:
-```shell <!-- shRunWithScreenshotTxt .build/screenshot-install-download.svg -->
+# API Doc
+- https://www.jslint.com/apidoc.html
+
+[![screenshot](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_browser__2f.artifact_2fapidoc.html.png)](https://www.jslint.com/apidoc.html)
+
+
+# Quickstart Install
+### To install, just download https://www.jslint.com/jslint.mjs and save to file:
+```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_sh_install_download.svg -->
 #!/bin/sh
 
 curl -L https://www.jslint.com/jslint.mjs > jslint.mjs
 ```
 - shell output
 
-![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.build/screenshot-install-download.svg)
+![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_sh_install_download.svg)
 
-## To run `jslint.mjs` from command-line:
-```shell <!-- shRunWithScreenshotTxt .build/screenshot-install-cli-file.svg -->
+### To run `jslint.mjs` in shell:
+```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_sh_jslint_file.svg -->
 #!/bin/sh
 
 printf "console.log('hello world');\n" > hello.js
@@ -60,21 +91,28 @@ node jslint.mjs hello.js
 ```
 - shell output
 
-![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.build/screenshot-install-cli-file.svg)
+![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_sh_jslint_file.svg)
 
-## To import `jslint.mjs` as es-module:
-```shell <!-- shRunWithScreenshotTxt .build/screenshot-install-import.svg -->
+### To import `jslint.mjs` in ES Module environment:
+```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_js_import_esm.svg -->
 #!/bin/sh
 
 node --input-type=module -e '
 
 /*jslint devel*/
+
+// Import JSLint in ES Module environment.
+
 import jslint from "./jslint.mjs";
+
 let globals = ["caches", "indexedDb"];
 let options = {browser: true};
 let result;
 let source = "console.log(\u0027hello world\u0027);\n";
-result = jslint(source, options, globals);
+
+// JSLint <source> and print <formatted_message>.
+
+result = jslint.jslint(source, options, globals);
 result.warnings.forEach(function ({
     formatted_message
 }) {
@@ -85,25 +123,183 @@ result.warnings.forEach(function ({
 ```
 - shell output
 
-![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.build/screenshot-install-import.svg)
+![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_js_import_esm.svg)
 
-## To jslint entire directory:
-```shell <!-- shRunWithScreenshotTxt .build/screenshot-install-cli-dir.svg -->
+### To import `jslint.mjs` in CommonJS environment:
+```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_js_import_cjs.svg -->
 #!/bin/sh
+
+node -e '
+
+/*jslint devel*/
+(async function () {
+    let globals = ["caches", "indexedDb"];
+    let jslint;
+    let options = {browser: true};
+    let result;
+    let source = "console.log(\u0027hello world\u0027);\n";
+
+// Import JSLint in CommonJS environment.
+
+    jslint = await import("./jslint.mjs");
+    jslint = jslint.default;
+
+// JSLint <source> and print <formatted_message>.
+
+    result = jslint.jslint(source, options, globals);
+    result.warnings.forEach(function ({
+        formatted_message
+    }) {
+        console.error(formatted_message);
+    });
+}());
+
+'
+```
+- shell output
+
+![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_js_import_cjs.svg)
+
+### To JSLint entire directory in shell:
+```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_sh_jslint_dir.svg -->
+#!/bin/sh
+
+# JSLint directory '.'
 
 node jslint.mjs .
 ```
 - shell output
 
-![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.build/screenshot-install-cli-dir.svg)
+![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_sh_jslint_dir.svg)
 
-<!-- coverage-hack
-```javascript
-"use strict";
+
+# Quickstart JSLint Report
+### To create a JSLint report in shell:
+```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_sh_jslint_report_file.svg -->
+#!/bin/sh
+
+printf "function foo() {console.log('hello world');}\n" > hello.js
+
+# Create JSLint report from file 'hello.js' in shell.
+
+node jslint.mjs \
+    jslint_report=.artifact/jslint_report_hello.html \
+    hello.js
 ```
--->
+- shell output
 
-## To run jslint as vim-plugin:
+![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_sh_jslint_report_file.svg)
+
+- screenshot file [.artifact/jslint_report_hello.html](https://jslint-org.github.io/jslint/branch-master/.artifact/jslint_report_hello.html)
+
+[![screenshot.png](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_browser__2f.artifact_2fjslint_report_hello.html.png)](https://jslint-org.github.io/jslint/branch-master/.artifact/jslint_report_hello.html)
+
+
+### To create a JSLint report in javascript:
+```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_js_jslint_report_file.svg -->
+#!/bin/sh
+
+node --input-type=module -e '
+
+/*jslint devel*/
+import jslint from "./jslint.mjs";
+import fs from "fs";
+(async function () {
+    let report;
+    let result;
+    let source = "function foo() {console.log(\u0027hello world\u0027);}\n";
+
+// Create JSLint report from <source> in javascript.
+
+    result = jslint.jslint(source);
+    report = jslint.jslint_report(result);
+
+    await fs.promises.mkdir(".artifact/", {recursive: true});
+    await fs.promises.writeFile(".artifact/jslint_report_hello.html", report);
+    console.error("wrote file .artifact/jslint_report_hello.html");
+}());
+
+'
+```
+- shell output
+
+![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_js_jslint_report_file.svg)
+
+
+# Quickstart V8 Coverage Report
+### To create V8 coverage report from Node.js / Npm program in shell:
+```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_sh_coverage_report_spawn.svg -->
+#!/bin/sh
+
+git clone https://github.com/mapbox/node-sqlite3 node-sqlite3-sh \
+    --branch=v5.0.2 \
+    --depth=1 \
+    --single-branch
+
+cd node-sqlite3-sh
+npm install
+
+# Create V8 coverage report from program `npm run test` in shell.
+
+node ../jslint.mjs \
+    v8_coverage_report=../.artifact/coverage_sqlite3_sh/ \
+    npm run test
+```
+- screenshot file [.artifact/coverage_sqlite3_sh/index.html](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage_sqlite3_sh/index.html)
+
+[![screenshot.png](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_browser__2f.artifact_2fcoverage_sqlite3_sh_2findex.html.png)](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage_sqlite3_sh/index.html)
+
+- screenshot file [.artifact/coverage_sqlite3_sh/lib/sqlite3.js.html](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage_sqlite3_sh/lib/sqlite3.js.html)
+
+[![screenshot.png](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_browser__2f.artifact_2fcoverage_sqlite3_sh_2flib_2fsqlite3.js.html.png)](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage_sqlite3_sh/lib/sqlite3.js.html)
+
+- shell output
+
+![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_sh_coverage_report_spawn.svg)
+
+### To create V8 coverage report from Node.js / Npm program in javascript:
+```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_js_coverage_report_spawn.svg -->
+#!/bin/sh
+
+git clone https://github.com/mapbox/node-sqlite3 node-sqlite3-js \
+    --branch=v5.0.2 \
+    --depth=1 \
+    --single-branch
+
+cd node-sqlite3-js
+npm install
+
+node --input-type=module -e '
+
+/*jslint node*/
+import jslint from "../jslint.mjs";
+(async function () {
+
+// Create V8 coverage report from program `npm run test` in javascript.
+
+    await jslint.v8CoverageReportCreate({
+        coverageDir: "../.artifact/coverage_sqlite3_js/",
+        processArgv: ["npm", "run", "test"]
+    });
+}());
+
+'
+```
+- screenshot file [.artifact/coverage_sqlite3_js/index.html](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage_sqlite3_js/index.html)
+
+[![screenshot.png](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_browser__2f.artifact_2fcoverage_sqlite3_js_2findex.html.png)](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage_sqlite3_js/index.html)
+
+- screenshot file [.artifact/coverage_sqlite3_js/lib/sqlite3.js.html](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage_sqlite3_js/lib/sqlite3.js.html)
+
+[![screenshot.png](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_browser__2f.artifact_2fcoverage_sqlite3_js_2flib_2fsqlite3.js.html.png)](https://jslint-org.github.io/jslint/branch-master/.artifact/coverage_sqlite3_js/lib/sqlite3.js.html)
+
+- shell output
+
+![screenshot.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_js_coverage_report_spawn.svg)
+
+
+# Plugin Vim
+### To run JSLint inside vim:
 1. Download and save [`jslint.mjs`](https://www.jslint.com/jslint.mjs), [`jslint.vim`](https://www.jslint.com/jslint.vim) to directory `~/.vim/`
 2. Add vim-command `:source ~/.vim/jslint.vim` to file `~/.vimrc`
 3. Vim can now jslint files (via nodejs):
@@ -111,19 +307,15 @@ node jslint.mjs .
     - with vim-key-combo `<Ctrl-S> <Ctrl-J>`
 - screenshot
 
-![screenshot.png](asset-image-jslint-vim-plugin.png)
+![screenshot.png](asset_image_jslint_vim_plugin.png)
 
 
 # Description
 - [jslint.mjs](jslint.mjs) contains the jslint function. It parses and analyzes a source file, returning an object with information about the file. It can also take an object that sets options.
 
-- [index.html](index.html) runs the jslint.mjs function in a web page. The page also depends on `browser.mjs`.
-
-- [browser.mjs](browser.mjs) runs the web user interface and generates the results reports in HTML.
+- [index.html](index.html) runs the jslint.mjs function in a web page.
 
 - [help.html](help.html) describes JSLint's usage. Please [read it](https://jslint-org.github.io/jslint/help.html).
-
-- [function.html](function.html) describes the jslint function and the results it produces.
 
 JSLint can be run anywhere that JavaScript (or Java) can run.
 
@@ -143,15 +335,16 @@ right so that you can focus your creative energy where it is most needed.
 
 
 # Package Listing
-![screenshot-files.svg](https://jslint-org.github.io/jslint/branch-master/.build/screenshot-files.svg)
+![screenshot_package_listing.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_package_listing.svg)
 
 
 # Changelog
 - [Full CHANGELOG.md](CHANGELOG.md)
 
-![screenshot-changelog.svg](https://jslint-org.github.io/jslint/branch-master/.build/screenshot-changelog.svg)
+![screenshot_changelog.svg](https://jslint-org.github.io/jslint/branch-master/.artifact/screenshot_changelog.svg)
 
 
 # License
 - JSLint is under [Unlicense License](LICENSE).
 - CodeMirror code-editor is under [MIT License](https://github.com/codemirror/CodeMirror/blob/master/LICENSE).
+- Function `v8CoverageListMerge` is derived from [MIT Licensed v8-coverage](https://github.com/demurgos/v8-coverage/blob/73446087dc38f61b09832c9867122a23f8577099/ts/LICENSE.md).
