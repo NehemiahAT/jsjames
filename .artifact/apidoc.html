@@ -170,8 +170,8 @@ function jslint_cli<span class="apidocSignatureSpan">({
     mode_cli,
     mode_noop,
     option,
-    processArgv,
-    processEnv,
+    process_argv,
+    process_env,
     process_exit,
     source
 })</span>
@@ -542,7 +542,7 @@ jstestDescribe((
         await <span class="apidocCodeKeywordSpan">fsWriteFileWithParents</span>(file, data);
         await jslint.jslint_cli({
             mode_cli: true,
-            processArgv: [
+            process_argv: [
                 "node", "jslint.mjs",
                 "v8_coverage_report=" + dir,
                 "node",
@@ -760,7 +760,7 @@ switch (command[0]) {
 // PR-362 - Add API Doc.
 
 case "jslint_apidoc":
-    await <span class="apidocCodeKeywordSpan">jslint_apidoc</span>(Object.assign(JSON.parse(processArgv[3]), {
+    await <span class="apidocCodeKeywordSpan">jslint_apidoc</span>(Object.assign(JSON.parse(process_argv[3]), {
         pathname: command[1]
     }));
     return;
@@ -822,8 +822,8 @@ case "{}":
     mode_cli,
     mode_noop,
     option,
-    processArgv,
-    processEnv,
+    process_argv,
+    process_env,
     process_exit,
     source
 })</span>
@@ -839,8 +839,8 @@ case "{}":
     mode_cli,
     mode_noop,
     option,
-    processArgv,
-    processEnv,
+    process_argv,
+    process_env,
     process_exit,
     source
 }) {
@@ -898,10 +898,10 @@ case "{}":
                     line_offset: string_line_count(code.slice(0, ii)) + 1,
                     option: Object.assign(empty(), {
                         beta: Boolean(
-                            processEnv.JSLINT_BETA
+                            process_env.JSLINT_BETA
                             &amp;&amp; !(
                                 /0|false|null|undefined/
-                            )....
+                           ...
 }
 </pre></li>
 <li>Example usage:<pre class="apidocCodePre">...
@@ -914,7 +914,7 @@ case "{}":
         await fsWriteFileWithParents(file, data);
         await jslint.<span class="apidocCodeKeywordSpan">jslint_cli</span>({
             mode_cli: true,
-            processArgv: [
+            process_argv: [
                 "node", "jslint.mjs",
                 "v8_coverage_report=" + dir,
                 "node",
@@ -1558,7 +1558,7 @@ gpt4gbw7x0Cn/PocitK5KIGPGQIzQzAMuCeC2ERAidx9TySVq...
         await fsWriteFileWithParents(file, data);
         await jslint.jslint_cli({
             mode_cli: true,
-            processArgv: [
+            process_argv: [
                 "node", "jslint.mjs",
 ...</pre></li>
 
