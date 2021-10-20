@@ -1849,13 +1849,13 @@ body {
 <pre><span class="lineno"><a href="#line_1707" id="line_1707"> 1707.</a></span><span class="count                ">      4</span><span>            data = await moduleFs.promises.readdir(file, "utf8");</span></pre>
 <pre><span class="lineno"><a href="#line_1708" id="line_1708"> 1708.</a></span><span class="count                ">      4</span><span>        } catch (ignore) {}</span></pre>
 <pre><span class="lineno"><a href="#line_1709" id="line_1709"> 1709.</a></span><span class="count                ">      4</span><span>        if (data) {</span></pre>
-<pre><span class="lineno"><a href="#line_1710" id="line_1710"> 1710.</a></span><span class="count                ">     26</span><span>            await Promise.all(data.map(async function (file2) {</span></pre>
-<pre><span class="lineno"><a href="#line_1711" id="line_1711"> 1711.</a></span><span class="count                ">     26</span><span>                let code;</span></pre>
-<pre><span class="lineno"><a href="#line_1712" id="line_1712"> 1712.</a></span><span class="count                ">     26</span><span>                let time_start = Date.now();</span></pre>
-<pre><span class="lineno"><a href="#line_1713" id="line_1713"> 1713.</a></span><span class="count                ">     26</span><span>                file2 = file + "/" + file2;</span></pre>
-<pre><span class="lineno"><a href="#line_1714" id="line_1714"> 1714.</a></span><span class="count                ">     26</span><span>                switch ((</span></pre>
-<pre><span class="lineno"><a href="#line_1715" id="line_1715"> 1715.</a></span><span class="count                ">     26</span><span>                    /\.\w+?$|$/m</span></pre>
-<pre><span class="lineno"><a href="#line_1716" id="line_1716"> 1716.</a></span><span class="count                ">     26</span><span>                ).exec(file2)[0]) {</span></pre>
+<pre><span class="lineno"><a href="#line_1710" id="line_1710"> 1710.</a></span><span class="count                ">     27</span><span>            await Promise.all(data.map(async function (file2) {</span></pre>
+<pre><span class="lineno"><a href="#line_1711" id="line_1711"> 1711.</a></span><span class="count                ">     27</span><span>                let code;</span></pre>
+<pre><span class="lineno"><a href="#line_1712" id="line_1712"> 1712.</a></span><span class="count                ">     27</span><span>                let time_start = Date.now();</span></pre>
+<pre><span class="lineno"><a href="#line_1713" id="line_1713"> 1713.</a></span><span class="count                ">     27</span><span>                file2 = file + "/" + file2;</span></pre>
+<pre><span class="lineno"><a href="#line_1714" id="line_1714"> 1714.</a></span><span class="count                ">     27</span><span>                switch ((</span></pre>
+<pre><span class="lineno"><a href="#line_1715" id="line_1715"> 1715.</a></span><span class="count                ">     27</span><span>                    /\.\w+?$|$/m</span></pre>
+<pre><span class="lineno"><a href="#line_1716" id="line_1716"> 1716.</a></span><span class="count                ">     27</span><span>                ).exec(file2)[0]) {</span></pre>
 <pre><span class="lineno"><a href="#line_1717" id="line_1717"> 1717.</a></span><span class="count                ">      4</span><span>                case ".cjs":</span></pre>
 <pre><span class="lineno"><a href="#line_1718" id="line_1718"> 1718.</a></span><span class="count                ">      4</span><span>                case ".html":</span></pre>
 <pre><span class="lineno"><a href="#line_1719" id="line_1719"> 1719.</a></span><span class="count                ">      5</span><span>                case ".js":</span></pre>
@@ -1863,8 +1863,8 @@ body {
 <pre><span class="lineno"><a href="#line_1721" id="line_1721"> 1721.</a></span><span class="count                ">      9</span><span>                case ".mjs":</span></pre>
 <pre><span class="lineno"><a href="#line_1722" id="line_1722"> 1722.</a></span><span class="count                ">     11</span><span>                case ".sh":</span></pre>
 <pre><span class="lineno"><a href="#line_1723" id="line_1723"> 1723.</a></span><span class="count                ">     11</span><span>                    break;</span></pre>
-<pre><span class="lineno"><a href="#line_1724" id="line_1724"> 1724.</a></span><span class="count                ">     15</span><span>                default:</span></pre>
-<pre><span class="lineno"><a href="#line_1725" id="line_1725"> 1725.</a></span><span class="count                ">     15</span><span>                    return;</span></pre>
+<pre><span class="lineno"><a href="#line_1724" id="line_1724"> 1724.</a></span><span class="count                ">     16</span><span>                default:</span></pre>
+<pre><span class="lineno"><a href="#line_1725" id="line_1725"> 1725.</a></span><span class="count                ">     16</span><span>                    return;</span></pre>
 <pre><span class="lineno"><a href="#line_1726" id="line_1726"> 1726.</a></span><span class="count                ">     11</span><span>                }</span></pre>
 <pre><span class="lineno"><a href="#line_1727" id="line_1727"> 1727.</a></span><span class="count                ">     11</span><span>                try {</span></pre>
 <pre><span class="lineno"><a href="#line_1728" id="line_1728"> 1728.</a></span><span class="count                ">     11</span><span>                    code = await moduleFs.promises.readFile(file2, "utf8");</span></pre>
@@ -11004,11 +11004,11 @@ body {
 <pre><span class="lineno"><a href="#line_10862" id="line_10862">10862.</a></span><span class="count                ">      6</span><span>        modeIndex: true,</span></pre>
 <pre><span class="lineno"><a href="#line_10863" id="line_10863">10863.</a></span><span class="count                ">      6</span><span>        pathname: coverageDir + "index"</span></pre>
 <pre><span class="lineno"><a href="#line_10864" id="line_10864">10864.</a></span><span class="count                ">      6</span><span>    });</span></pre>
-<pre><span class="lineno"><a href="#line_10865" id="line_10865">10865.</a></span><span class="count                ">      6</span><span>    assertOrThrow(</span></pre>
-<pre><span class="lineno"><a href="#line_10866" id="line_10866">10866.</a></span><span class="count                ">      6</span><span>        exitCode === 0,</span></pre>
-<pre><span class="lineno"><a href="#line_10867" id="line_10867">10867.</a></span><span class="count                ">      6</span><span>        "v8CoverageReportCreate - nonzero exitCode " + exitCode</span></pre>
-<pre><span class="lineno"><a href="#line_10868" id="line_10868">10868.</a></span><span class="count                ">      6</span><span>    );</span></pre>
-<pre><span class="lineno"><a href="#line_10869" id="line_10869">10869.</a></span><span class="count                ">      6</span><span>    await Promise.all(promiseList);</span></pre>
+<pre><span class="lineno"><a href="#line_10865" id="line_10865">10865.</a></span><span class="count                ">      6</span><span>    await Promise.all(promiseList);</span></pre>
+<pre><span class="lineno"><a href="#line_10866" id="line_10866">10866.</a></span><span class="count                ">      6</span><span>    assertOrThrow(</span></pre>
+<pre><span class="lineno"><a href="#line_10867" id="line_10867">10867.</a></span><span class="count                ">      6</span><span>        exitCode === 0,</span></pre>
+<pre><span class="lineno"><a href="#line_10868" id="line_10868">10868.</a></span><span class="count                ">      6</span><span>        "v8CoverageReportCreate - nonzero exitCode " + exitCode</span></pre>
+<pre><span class="lineno"><a href="#line_10869" id="line_10869">10869.</a></span><span class="count                ">      6</span><span>    );</span></pre>
 <pre><span class="lineno"><a href="#line_10870" id="line_10870">10870.</a></span><span class="count                ">      6</span><span>}</span></pre>
 <pre><span class="lineno"><a href="#line_10871" id="line_10871">10871.</a></span><span class="count                ">      1</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_10872" id="line_10872">10872.</a></span><span class="count                ">      1</span><span>/*</span></pre>

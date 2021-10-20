@@ -10862,11 +10862,11 @@ function sentinel() {}
         modeIndex: true,
         pathname: coverageDir + "index"
     });
+    await Promise.all(promiseList);
     assertOrThrow(
         exitCode === 0,
         "v8CoverageReportCreate - nonzero exitCode " + exitCode
     );
-    await Promise.all(promiseList);
 }
 
 /*
