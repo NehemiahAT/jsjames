@@ -67,7 +67,7 @@ body {
 </head>
 <body>
 <div class="apidocDiv">
-<h1>API Doc for <a href="https://github.com/jslint-org/jslint">JSLint (v2021.10.20)</a></h1>
+<h1>API Doc for <a href="https://github.com/jslint-org/jslint">JSLint (v2021.11.1-beta)</a></h1>
 <div class="apidocSectionDiv">
     <a href="#apidocTableOfContents1" id="apidocTableOfContents1">
         <h1>Table of Contents</h1>
@@ -162,8 +162,6 @@ function jslint_assert<span class="apidocSignatureSpan">(condition, message)</sp
 
 <a class="apidocElementLiA" href="#apidoc.elem.%22.%2Fjslint.mjs%22.jslint_cli">11.
 function jslint_cli<span class="apidocSignatureSpan">({
-    cjs_module,
-    cjs_require,
     console_error,
     console_log,
     file,
@@ -441,11 +439,11 @@ jstestDescribe((
     return argv[0];
 }</pre></li>
 <li>Example usage:<pre class="apidocCodePre">...
-    jslint_cli({
-        cjs_module,
-        cjs_require
-    });
-}());
+export default Object.freeze(jslint_export);    // Export jslint as esm.
+jslint_import_meta_url = import.meta.url;
+
+// Run jslint_cli.
+jslint_cli({});
 
 // Coverage-hack.
 <span class="apidocCodeKeywordSpan">debugInline</span>();
@@ -532,21 +530,21 @@ jstestDescribe((
     console.error("wrote file " + pathname);
 }</pre></li>
 <li>Example usage:<pre class="apidocCodePre">...
+                }
+            ]
+        }, undefined, 4)
     ]
-].forEach(function ([
+].map(async function ([
     file, data
-], ii) {
-    jstestIt(file, async function () {
-        let dir = ".tmp/coverage" + ii + "/";
-        file = dir + file;
-        await <span class="apidocCodeKeywordSpan">fsWriteFileWithParents</span>(file, data);
-        await jslint.jslint_cli({
-            mode_cli: true,
-            process_argv: [
-                "node", "jslint.mjs",
-                "v8_coverage_report=" + dir,
-                "node",
-                file
+]) {
+    await <span class="apidocCodeKeywordSpan">fsWriteFileWithParents</span>(file, data);
+}));
+await jslint.jslint_cli({
+    mode_cli: true,
+    process_argv: [
+        "node", "jslint.mjs",
+        "v8_coverage_report=.tmp/coverage_misc"
+        // "node", ".tmp/coverage_misc/aa.js"
 ...</pre></li>
 
 <li>
@@ -569,21 +567,21 @@ jstestDescribe((
     ), "&amp;gt;");
 }</pre></li>
 <li>Example usage:<pre class="apidocCodePre">...
-});
-chunk = "";
-line.forEach(function ({
-    char,
-    isHole
-}) {
-    if (inHole !== isHole) {
-        lineHtml += <span class="apidocCodeKeywordSpan">htmlEscape</span>(chunk);
-        lineHtml += (
-            isHole
-            ? "&lt;/span&gt;&lt;span class=\"uncovered\"&gt;"
-            : "&lt;/span&gt;&lt;span&gt;"
-        );
-        chunk = "";
-        inHole = isHole;
+                            inHole = isHole;
+                        }
+                        chunk += char;
+                    });
+                    lineHtml += htmlEscape(chunk);
+                    break;
+                default:
+                    lineHtml += <span class="apidocCodeKeywordSpan">htmlEscape</span>(line);
+                }
+                html += String(`
+&lt;pre&gt;
+&lt;span class="lineno"&gt;
+&lt;a href="#${lineId}" id="${lineId}"&gt;${String(ii + 1).padStart(5, " ")}.&lt;/a&gt;
+&lt;/span&gt;
+&lt;span class="count
 ...</pre></li>
 
 <li>
@@ -814,8 +812,6 @@ case "{}":
     <h2>
     <a href="#apidoc.elem.%22.%2Fjslint.mjs%22.jslint_cli" id="apidoc.elem.%22.%2Fjslint.mjs%22.jslint_cli">11.
     function jslint_cli<span class="apidocSignatureSpan">({
-    cjs_module,
-    cjs_require,
     console_error,
     console_log,
     file,
@@ -831,8 +827,6 @@ case "{}":
     </h2>
 </li>
 <li>Description and source-code:<pre class="apidocCodePre">async function jslint_cli({
-    cjs_module,
-    cjs_require,
     console_error,
     console_log,
     file,
@@ -901,25 +895,26 @@ case "{}":
                             process_env.JSLINT_BETA
                             &amp;&amp; !(
                                 /0|false|null|undefined/
-                           ...
+                            ).test(process_env.JSLINT_BETA)
+...
 }
 </pre></li>
 <li>Example usage:<pre class="apidocCodePre">...
-].forEach(function ([
+        }, undefined, 4)
+    ]
+].map(async function ([
     file, data
-], ii) {
-    jstestIt(file, async function () {
-        let dir = ".tmp/coverage" + ii + "/";
-        file = dir + file;
-        await fsWriteFileWithParents(file, data);
-        await jslint.<span class="apidocCodeKeywordSpan">jslint_cli</span>({
-            mode_cli: true,
-            process_argv: [
-                "node", "jslint.mjs",
-                "v8_coverage_report=" + dir,
-                "node",
-                file
-            ]
+]) {
+    await fsWriteFileWithParents(file, data);
+}));
+await jslint.<span class="apidocCodeKeywordSpan">jslint_cli</span>({
+    mode_cli: true,
+    process_argv: [
+        "node", "jslint.mjs",
+        "v8_coverage_report=.tmp/coverage_misc"
+        // "node", ".tmp/coverage_misc/aa.js"
+    ]
+});
 ...</pre></li>
 
 <li>
@@ -1545,21 +1540,21 @@ gpt4gbw7x0Cn/PocitK5KIGPGQIzQzAMuCeC2ERAidx9TySVq...
     }));
 }</pre></li>
 <li>Example usage:<pre class="apidocCodePre">...
-            + "case 2:break;\n"
-            + "}\n"
-        )
-    ]
-].forEach(function ([
-    file, data
-], ii) {
-    <span class="apidocCodeKeywordSpan">jstestIt</span>(file, async function () {
-        let dir = ".tmp/coverage" + ii + "/";
-        file = dir + file;
-        await fsWriteFileWithParents(file, data);
-        await jslint.jslint_cli({
-            mode_cli: true,
-            process_argv: [
-                "node", "jslint.mjs",
+        process_argv: [
+            "node", "jslint.mjs",
+            "v8_coverage_report=.tmp/coverage_npm",
+            "npm", "--version"
+        ]
+    });
+});
+<span class="apidocCodeKeywordSpan">jstestIt</span>((
+    "test misc handling-behavior"
+), async function () {
+    await Promise.all([
+        [
+            ".tmp/coverage_misc/aa.js", "\n".repeat(0x100)
+        ], [
+            ".tmp/coverage_misc/coverage-0-0-0.json", JSON.stringify({
 ...</pre></li>
 
 <li>

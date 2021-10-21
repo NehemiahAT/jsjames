@@ -29,31 +29,31 @@
     textLength="768"
     x="10"
     y="98"
->- ci - deprecate/remove jslint.cjs from ci                                                       </tspan>
-<tspan
-    lengthAdjust="spacingAndGlyphs"
-    textLength="768"
-    x="10"
-    y="120"
 >- cli - remove cli-option `--mode-vim-plugin`                                                    </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
-    y="142"
+    y="120"
 >- coverage - add macros `/*coverage-disable*/` and `/*coverage-enable*/`.                        </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
-    y="164"
+    y="142"
 >- jslint - add html and css linting back into jslint.                                            </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
-    y="186"
+    y="164"
 >- jslint - add new warning requiring paren around comma-separated concatenations.                </tspan>
+<tspan
+    lengthAdjust="spacingAndGlyphs"
+    textLength="768"
+    x="10"
+    y="186"
+>- jslint - add numeric-separators support.                                                       </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
@@ -65,19 +65,19 @@
     textLength="768"
     x="10"
     y="230"
->- jslint - unify analysis of variable-assignment/function-parameters into one function           </tspan>
-<tspan
-    lengthAdjust="spacingAndGlyphs"
-    textLength="768"
-    x="10"
-    y="252"
 >- jslint - require regexp to use open-form.                                                      </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
-    y="274"
+    y="252"
 >- jslint - try to improve parser to be able to parse jquery.js without stopping.                 </tspan>
+<tspan
+    lengthAdjust="spacingAndGlyphs"
+    textLength="768"
+    x="10"
+    y="274"
+>- jslint - unify analysis of variable-assignment/function-parameters into one function           </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
@@ -101,241 +101,241 @@
     textLength="768"
     x="10"
     y="362"
-># v2021.10.20                                                                                    </tspan>
+># v2021.11.1-beta                                                                                </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="384"
->- ci - add release-trigger to publish to `@jslint-org/jslint`                                    </tspan>
+>- ci - deprecate/remove jslint.cjs from ci                                                       </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="406"
->- bugfix - fix coverage-report having incorrect http-link to index.html                          </tspan>
+>                                                                                                 </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="428"
->- bugfix - fix false warning `uninitialized 'bb'` in code `/*jslint node*/\nlet {aa:bb} = {}; bb\</tspan>
+># v2021.10.20                                                                                    </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="450"
->  ();`                                                                                           </tspan>
+>- ci - add release-trigger to publish to `@jslint-org/jslint`                                    </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="472"
->- bugfix - fix issue #358 - switch-statement crashes jslint                                      </tspan>
+>- bugfix - fix coverage-report having incorrect http-link to index.html                          </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="494"
->- ci - cache coverage-example node-sqlite3 to speed up ci                                        </tspan>
+>- bugfix - fix false warning `uninitialized 'bb'` in code `/*jslint node*/\nlet {aa:bb} = {}; bb\</tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="516"
->- ci - rename dir .build/ to .artifact/                                                          </tspan>
+>  ();`                                                                                           </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="538"
->- ci - update shell-function shRunWithCoverage() to reduce size of string/argument passed to nod\</tspan>
+>- bugfix - fix issue #358 - switch-statement crashes jslint                                      </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="560"
->  ejs by using 2-space-indent                                                                    </tspan>
+>- ci - cache coverage-example node-sqlite3 to speed up ci                                        </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="582"
->- cli - add cli-command jslint_plugin_vim                                                        </tspan>
+>- ci - rename dir .build/ to .artifact/                                                          </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="604"
->- cli - add cli-command v8_coverage_report                                                       </tspan>
+>- ci - update shell-function shRunWithCoverage() to reduce size of string/argument passed to nod\</tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="626"
->- cli - change cli-option `--mode-report` to cli-command `jslint_report=&lt;filename&gt;`              </tspan>
+>  ejs by using 2-space-indent                                                                    </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="648"
->- coverage - relax requirement for coverageDir to be in cwd                                      </tspan>
+>- cli - add cli-command jslint_plugin_vim                                                        </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="670"
->- deprecated - cli - add cli-option `--mode-report`                                              </tspan>
+>- cli - add cli-command v8_coverage_report                                                       </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="692"
->- doc - add api-documentation                                                                    </tspan>
+>- cli - change cli-option `--mode-report` to cli-command `jslint_report=&lt;filename&gt;`              </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="714"
->- fs - merge file asset_codemirror_rollup.css into index.html                                    </tspan>
+>- coverage - relax requirement for coverageDir to be in cwd                                      </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="736"
->- fs - merge file browser.mjs into index.html                                                    </tspan>
+>- deprecated - cli - add cli-option `--mode-report`                                              </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="758"
->- fs - merge file function.html into help.html                                                   </tspan>
+>- doc - add api-documentation                                                                    </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="780"
->- fs - remove little-used font asset_font_programma_bold.woff2                                   </tspan>
+>- fs - merge file asset_codemirror_rollup.css into index.html                                    </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="802"
->- fs - rename files with dashes to files with underscore                                         </tspan>
+>- fs - merge file browser.mjs into index.html                                                    </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="824"
->- jslint - disable linting of embedded javascript in markdown-files                              </tspan>
+>- fs - merge file function.html into help.html                                                   </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="846"
->- jslint - relax regexp-warning against using 'space'                                            </tspan>
+>- fs - remove little-used font asset_font_programma_bold.woff2                                   </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="868"
->- npm - add file package.json and command `npm test`                                             </tspan>
+>- fs - rename files with dashes to files with underscore                                         </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="890"
->- style - change naming-convention for non-jslint-core code from underscore to camelCase         </tspan>
+>- jslint - disable linting of embedded javascript in markdown-files                              </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="912"
->- test - add mocha-like test-functions jstestDescribe, jstestIt                                  </tspan>
+>- jslint - relax regexp-warning against using 'space'                                            </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="934"
->                                                                                                 </tspan>
+>- npm - add file package.json and command `npm test`                                             </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="956"
-># v2021.9.20                                                                                     </tspan>
+>- style - change naming-convention for non-jslint-core code from underscore to camelCase         </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="978"
->- jslint - add bigint support.                                                                   </tspan>
+>- test - add mocha-like test-functions jstestDescribe, jstestIt                                  </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="1000"
->- vim - add vim-plugin and file jslint.vim.                                                      </tspan>
-<tspan
-    lengthAdjust="spacingAndGlyphs"
-    textLength="768"
-    x="10"
-    y="1022"
->- doc - auto-generate toc for README.md                                                          </tspan>
-<tspan
-    lengthAdjust="spacingAndGlyphs"
-    textLength="768"
-    x="10"
-    y="1044"
->- jslint - rename little-used directive `debug` to `trace` to avoid confusion with non-related d\</tspan>
-<tspan
-    lengthAdjust="spacingAndGlyphs"
-    textLength="768"
-    x="10"
-    y="1066"
->  irective `devel`.                                                                              </tspan>
-<tspan
-    lengthAdjust="spacingAndGlyphs"
-    textLength="768"
-    x="10"
-    y="1088"
 >                                                                                                 </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
+    y="1022"
+># v2021.9.20                                                                                     </tspan>
+<tspan
+    lengthAdjust="spacingAndGlyphs"
+    textLength="768"
+    x="10"
+    y="1044"
+>- jslint - add bigint support.                                                                   </tspan>
+<tspan
+    lengthAdjust="spacingAndGlyphs"
+    textLength="768"
+    x="10"
+    y="1066"
+>- vim - add vim-plugin and file jslint.vim.                                                      </tspan>
+<tspan
+    lengthAdjust="spacingAndGlyphs"
+    textLength="768"
+    x="10"
+    y="1088"
+>- doc - auto-generate toc for README.md                                                          </tspan>
+<tspan
+    lengthAdjust="spacingAndGlyphs"
+    textLength="768"
+    x="10"
     y="1110"
-># v2021.8.20                                                                                     </tspan>
+>- jslint - rename little-used directive `debug` to `trace` to avoid confusion with non-related d\</tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="1132"
->- warning - disable un-ergonomic warnings restricting directive-global (missing_browser and unex\</tspan>
+>  irective `devel`.                                                                              </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="1154"
->  pected_directive_a).                                                                           </tspan>
+>                                                                                                 </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="1176"
->- fs - rename file ci.sh to jslint_ci.sh.                                                        </tspan>
+># v2021.8.20                                                                                     </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="1198"
->- license - add codemirror license to rollup-assets.                                             </tspan>
+>- warning - disable un-ergonomic warnings restricting directive-global (missing_browser and unex\</tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="1220"
->- website - display number of warnings, properties, functions in report.                         </tspan>
+>  pected_directive_a).                                                                           </tspan>
 
 </text>
 </svg>
