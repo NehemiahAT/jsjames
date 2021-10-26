@@ -1380,6 +1380,14 @@ jslint_assert(
 </span>    let html = "";
     let length_80 = 1111;
 
+    function address(line = 1, column = 1) {
+
+// This function will create HTML address element from &lt;line&gt; and &lt;column&gt;
+
+        return `&lt;address&gt;${Number(line)}: ${Number(column)}&lt;/address&gt;`;
+
+    }
+
     function detail(title, list) {
         return (
             (Array.isArray(list) &amp;&amp; list.length &gt; 0)
@@ -1413,10 +1421,7 @@ AAAAAAAAAAAAAAAABmAAgiQINAmcDBEICuc41DEBNgIkA4R2C4I+AAQgBYkuByAMgScfYUIF\
 KDflSQnlJ0bP+QnPQAy744n9mup6H9PaCDFwM5zjf8exB89bZ1cdrYOP0NgnuRDRWlk9u/fE\
 llkxqmfH8lmRQ/DAmER9opk9wR6suc1LvTiXNEe1vbhUCH2USgnEwH3vUm05JQqejGvZvOtz\
 7sIKEGgLdDNl/IrfqWVZG/wr42ekomEm91VA1p4LhHBuFzHF8//u7vvbREHMQqGtNLmiOOD/\
-X7WWiwqyCE98qt0jk5JJmgR5WJJElBmzRb1F7a66MmSLTNWZ2XSHfKBSKHoVteSEJ6EOdvVw\
-fNZOtXKDe39jXdRlkmMnOWIOFBgeEK/b0mFsgffnPyyAitNyutKky7J8a8MSEkAKGLgfptnS\
-/gDRSo7vwdNUmQDB7oP6pK7QF5d9SrY8M/tkrXcurSIQAmX7tz7pd33LIB7GQkBQ/k81s/0D\
-gpt4gbw7x0Cn/PocitK5KIGPGQIzQzAMuCeC2ERAidx9TySVq...
+X7WWiwqyCE98qt0jk5JJmgR5WJJElBmzRb1F7a66MmSLT...
 }
 </pre></li>
 <li>Example usage:<pre class="apidocCodePre">...
