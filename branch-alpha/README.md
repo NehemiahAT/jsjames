@@ -1,5 +1,7 @@
 # [<img align="left" height="80" src="asset_image_logo_512.svg"/>](https://github.com/jslint-org/jslint) JSLint, The JavaScript Code Quality and Coverage Tool
 
+&nbsp;
+
 Douglas Crockford <douglas@crockford.com>
 
 
