@@ -25,15 +25,11 @@
 }
 /*csslint ignore:end*/
 
-.JSLINT_ {
+/* css - jslint_report - font */
+.JSLINT_,
+.JSLINT_ fieldset legend {
     font-family: daley, sans-serif;
     font-size: 14px;
-}
-.JSLINT_ fieldset legend,
-.JSLINT_ .center {
-    font-family: daley, sans-serif;
-    font-size: 14px;
-    text-align: center;
 }
 .JSLINT_ fieldset textarea,
 .JSLINT_ #JSLINT_REPORT_FUNCTIONS dt,
@@ -47,7 +43,18 @@
 .JSLINT_ fieldset > div {
     font-family: sans-serif;
 }
+.JSLINT_ #JSLINT_REPORT_FUNCTIONS .level dfn {
+    font-style: normal;
+    font-weight: bold;
+}
+.JSLINT_ #JSLINT_REPORT_FUNCTIONS .level dt {
+    font-style: italic;
+}
+.JSLINT_ #JSLINT_REPORT_TITLE {
+    font-size: 32px;
+}
 
+/* css - jslint_report - general */
 body {
     background: antiquewhite;
 }
@@ -59,6 +66,10 @@ body {
 }
 .JSLINT_ fieldset address {
     float: right;
+}
+.JSLINT_ fieldset legend,
+.JSLINT_ #JSLINT_REPORT_TITLE {
+    text-align: center;
 }
 .JSLINT_ fieldset legend {
     background: darkslategray;
@@ -90,15 +101,12 @@ body {
 }
 .JSLINT_ #JSLINT_REPORT_FUNCTIONS .level dfn {
     display: block;
-    font-style: normal;
-    font-weight: bold;
     line-height: 20px;
 }
 .JSLINT_ #JSLINT_REPORT_FUNCTIONS .level dl {
     position: relative
 }
 .JSLINT_ #JSLINT_REPORT_FUNCTIONS .level dt {
-    font-style: italic;
     line-height: 20px;
     position: absolute;
     text-align: right;
@@ -157,9 +165,7 @@ body {
 }
 .JSLINT_ #JSLINT_REPORT_TITLE {
     color: darkslategray;
-    font-size: 32px;
     padding-top: 16px;
-    text-align: center;
 }
 .JSLINT_ #JSLINT_REPORT_WARNINGS cite {
     display: block;
@@ -214,7 +220,7 @@ JSLint Report
 <div>
 <div class="level level0">
 <dl><dt>global</dt><dd>foo</dd></dl></div>
-<div class="level level1"><address>1</address><dfn>foo()</dfn></div>
+<div class="level level1"><address>1: 1</address><dfn>foo()</dfn></div>
 </div>
 </fieldset>
 </div>
