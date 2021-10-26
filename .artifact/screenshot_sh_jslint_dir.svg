@@ -53,91 +53,91 @@
     textLength="768"
     x="10"
     y="186"
->jslint - 106ms - ./.ci.sh                                                                        </tspan>
+>jslint - 36ms - ./.ci.sh                                                                         </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="208"
->jslint ./hello.js                                                                                </tspan>
+>jslint - 40ms - ./help.html                                                                      </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="230"
-> 1. Undeclared 'console'. // line 1, column 17                                                   </tspan>
+>jslint - 76ms - ./index.html                                                                     </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="252"
->    function foo() {console.log('hello world');}                                                 </tspan>
+>jslint - 601ms - ./jslint.js                                                                     </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="274"
-> 2. Use double quotes, not single quotes. // line 1, column 29                                   </tspan>
+>jslint - 979ms - ./jslint.mjs                                                                    </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="296"
->    function foo() {console.log('hello world');}                                                 </tspan>
+>jslint - 1043ms - ./jslint_ci.sh                                                                 </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="318"
->jslint - 131ms - ./hello.js                                                                      </tspan>
+>jslint - 1045ms - ./package.json                                                                 </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="340"
->jslint - 134ms - ./help.html                                                                     </tspan>
+>jslint - 1088ms - ./test.mjs                                                                     </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="362"
->jslint - 191ms - ./index.html                                                                    </tspan>
+>jslint - 1199ms - ./test_coverage_merge_data.json                                                </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="384"
->jslint - 844ms - ./jslint.js                                                                     </tspan>
+>jslint ./hello.js                                                                                </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="406"
->jslint - 1185ms - ./jslint.mjs                                                                   </tspan>
+> 1. Undeclared 'console'. // line 1, column 17                                                   </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="428"
->jslint - 1307ms - ./jslint_ci.sh                                                                 </tspan>
+>    function foo() {console.log('hello world');}                                                 </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="450"
->jslint - 1308ms - ./package.json                                                                 </tspan>
+> 2. Use double quotes, not single quotes. // line 1, column 29                                   </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="472"
->jslint - 1323ms - ./test.mjs                                                                     </tspan>
+>    function foo() {console.log('hello world');}                                                 </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="494"
->jslint - 1450ms - ./test_coverage_merge_data.json                                                </tspan>
+>jslint - 1200ms - ./hello.js                                                                     </tspan>
 
 </text>
 </svg>
