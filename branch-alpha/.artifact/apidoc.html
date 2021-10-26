@@ -108,7 +108,7 @@ function debugInline<span class="apidocSignatureSpan">(...argv)</span>
 <li>
 
 <a class="apidocElementLiA" href="#apidoc.elem.%22.%2Fjslint.mjs%22.fsRmRecursive">5.
-function fsRmRecursive<span class="apidocSignatureSpan">(path, option_dict)</span>
+function fsRmRecursive<span class="apidocSignatureSpan">(pathname, option_dict)</span>
 </a>
 
 </li>
@@ -342,7 +342,7 @@ string jslint_edition
             }, "invalid coverageDir");
         });
 
-// CL-xxx - coverage - Relax requirement for coverageDir to be in cwd.
+// CL-61b11012 - coverage - Relax requirement for coverageDir to be in cwd.
 //         jstestIt((
 //             "test invalid-coverageDir handling-behavior"
 ...</pre></li>
@@ -452,16 +452,16 @@ jslint_cli({});
 <li>
     <h2>
     <a href="#apidoc.elem.%22.%2Fjslint.mjs%22.fsRmRecursive" id="apidoc.elem.%22.%2Fjslint.mjs%22.fsRmRecursive">5.
-    function fsRmRecursive<span class="apidocSignatureSpan">(path, option_dict)</span>
+    function fsRmRecursive<span class="apidocSignatureSpan">(pathname, option_dict)</span>
     </a>
     </h2>
 </li>
-<li>Description and source-code:<pre class="apidocCodePre">async function fsRmRecursive(path, option_dict) {
+<li>Description and source-code:<pre class="apidocCodePre">async function fsRmRecursive(pathname, option_dict) {
 <span class="apidocCodeCommentSpan">
-// This function will 'rm -r' &lt;path&gt;.
+// This function will 'rm -r' &lt;pathname&gt;.
 
 </span>    await moduleFsInit();
-    console.error("rm -r path " + path);
+    console.error("rm -r pathname " + pathname);
     if (((
         option_dict &amp;&amp; option_dict.process_version
     ) || process.version) &lt; "v14") {
@@ -469,14 +469,14 @@ jslint_cli({});
 // Legacy rmdir for nodejs v12
 
         await Promise.all([
-            moduleFs.promises.unlink(path).catch(noop),
-            moduleFs.promises.rmdir(path, {
+            moduleFs.promises.unlink(pathname).catch(noop),
+            moduleFs.promises.rmdir(pathname, {
                 recursive: true
             }).catch(noop)
         ]);
         return;
     }
-    await moduleFs.promises.rm(path, {
+    await moduleFs.promises.rm(pathname, {
         recursive: true
     }).catch(noop);
 }</pre></li>
