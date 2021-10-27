@@ -71,7 +71,7 @@
     textLength="768"
     x="10"
     y="252"
->&gt; node --input-type=module -e '                                                                  </tspan>
+>&gt; node --input-type=module --eval '                                                              </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
@@ -227,7 +227,7 @@
     textLength="768"
     x="10"
     y="824"
->audited 248 packages in 1.805s                                                                   </tspan>
+>audited 248 packages in 1.733s                                                                   </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
@@ -353,7 +353,7 @@
     textLength="768"
     x="10"
     y="1286"
->    ✓ should return the correct lastID (101ms)                                                   </tspan>
+>    ✓ should return the correct lastID (174ms)                                                   </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
@@ -383,7 +383,7 @@
     textLength="768"
     x="10"
     y="1396"
->    ✓ copies source fully with step(-1)                                                          </tspan>
+>    ✓ copies source fully with step(-1) (398ms)                                                  </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
@@ -413,7 +413,7 @@
     textLength="768"
     x="10"
     y="1506"
->    ✓ backup works if database is modified half-way through                                      </tspan>
+>    ✓ backup works if database is modified half-way through (57ms)                               </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
@@ -431,13 +431,13 @@
     textLength="768"
     x="10"
     y="1572"
->    ✓ cannot backup to a locked db                                                               </tspan>
+>    ✓ cannot backup to a locked db (88ms)                                                        </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
     x="10"
     y="1594"
->    ✓ fuss-free incremental backups work (166ms)                                                 </tspan>
+>    ✓ fuss-free incremental backups work (210ms)                                                 </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
@@ -449,7 +449,7 @@
     textLength="768"
     x="10"
     y="1638"
->    ✓ setting retryErrors enables automatic finishing                                            </tspan>
+>    ✓ setting retryErrors enables automatic finishing (56ms)                                     </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
@@ -623,7 +623,7 @@
     textLength="768"
     x="10"
     y="2276"
->    ✓ retrieve 100,000 rows with Statement#each (296ms)                                          </tspan>
+>    ✓ retrieve 100,000 rows with Statement#each (270ms)                                          </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"
@@ -725,7 +725,7 @@
     textLength="768"
     x="10"
     y="2650"
->(node:2670) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability i\</tspan>
+>(node:2198) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability i\</tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"

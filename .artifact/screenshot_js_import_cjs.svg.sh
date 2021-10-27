@@ -1,7 +1,7 @@
 (set -e
 printf '> #!/bin/sh
 > 
-> node -e '"'"'
+> node --eval '"'"'
 > 
 > /*jslint devel*/
 > (async function () {
@@ -32,7 +32,7 @@ printf '> #!/bin/sh
 '
 #!/bin/sh
 
-node -e '
+node --eval '
 
 /*jslint devel*/
 (async function () {

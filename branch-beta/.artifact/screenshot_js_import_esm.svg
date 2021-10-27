@@ -23,7 +23,7 @@
     textLength="768"
     x="10"
     y="76"
->&gt; node --input-type=module -e '                                                                  </tspan>
+>&gt; node --input-type=module --eval '                                                              </tspan>
 <tspan
     lengthAdjust="spacingAndGlyphs"
     textLength="768"

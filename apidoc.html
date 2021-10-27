@@ -842,9 +842,18 @@ case "{}":
         code,
         file,
         line_offset = 0,
+        mode_conditional,
         option = empty()
     }) {
         let result_from_file;
+        if (
+            mode_conditional
+            &amp;&amp; !(
+                /^\/\*jslint\b/m
+            ).test(code.slice(0, 65536))
+        ) {
+            return;
+        }
         option = Object.assign(empty(), option, {
             file
         });
@@ -869,24 +878,29 @@ case "{}":
                 return "";
             });
             return;
+        case ".md":
+
+// Recursively jslint embedded "node --eval '\n...\n'".
+
+            jslint_node_eval({
+                code,
+                file,
+                mode_conditional: true,
+                option
+            });
+            return;
         case ".sh":
 
-// Recursively jslint embedded "node -e '\n...\n'".
+// Recursively jslint embedded "node --eval '\n...\n'".
 
-            code.replace((
-                /\bnode\b.*? -e '\n([\S\s]*?\n)'/gm
-            ), function (ignore, match1, ii) {
-                jslint_from_file({
-                    code: match1,
-                    file: file + ".&lt;node -e&gt;.js",
-                    line_offset: string_line_count(code.slice(0, ii)) + 1,
-                    option: Object.assign(empty(), {
-                        beta: Boolean(
-                            process_env.JSLINT_BETA
-                            &amp;&amp; !(
-                                /0|false|null|undefined/
-                            ).test(process_env.JSLINT_BETA)
-...
+            jslint_node_eval({
+                code,
+                file,
+                option
+            });
+            return;
+        default:
+            ...
 }
 </pre></li>
 <li>Example usage:<pre class="apidocCodePre">...
