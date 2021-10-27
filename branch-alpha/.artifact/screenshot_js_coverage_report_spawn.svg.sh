@@ -9,7 +9,7 @@ printf '> #!/bin/sh
 > cd node-sqlite3-js
 > npm install
 > 
-> node --input-type=module -e '"'"'
+> node --input-type=module --eval '"'"'
 > 
 > /*jslint node*/
 > import jslint from "../jslint.mjs";
@@ -40,7 +40,7 @@ cd node-sqlite3-js
 git checkout 60a022c511a37788e652c271af23174566a80c30
 npm install
 
-node --input-type=module -e '
+node --input-type=module --eval '
 
 /*jslint node*/
 import jslint from "../jslint.mjs";

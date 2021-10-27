@@ -1,7 +1,7 @@
 (set -e
 printf '> #!/bin/sh
 > 
-> node --input-type=module -e '"'"'
+> node --input-type=module --eval '"'"'
 > 
 > /*jslint devel*/
 > 
@@ -29,7 +29,7 @@ printf '> #!/bin/sh
 '
 #!/bin/sh
 
-node --input-type=module -e '
+node --input-type=module --eval '
 
 /*jslint devel*/
 
