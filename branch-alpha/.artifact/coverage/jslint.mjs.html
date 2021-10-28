@@ -6811,40 +6811,40 @@ body {
 <pre><span class="lineno"><a href="#line_6669" id="line_6669"> 6669.</a></span><span class="count                ">  13660</span><span>// If we have seen this name before, increment its count.</span></pre>
 <pre><span class="lineno"><a href="#line_6670" id="line_6670"> 6670.</a></span><span class="count                ">  13660</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_6671" id="line_6671"> 6671.</a></span><span class="count                ">  13660</span><span>        if (typeof property_dict[id] === "number") {</span></pre>
-<pre><span class="lineno"><a href="#line_6672" id="line_6672"> 6672.</a></span><span class="count                ">  11498</span><span>            property_dict[id] += 1;</span></pre>
-<pre><span class="lineno"><a href="#line_6673" id="line_6673"> 6673.</a></span><span class="count                ">  11498</span><span></span></pre>
-<pre><span class="lineno"><a href="#line_6674" id="line_6674"> 6674.</a></span><span class="count                ">  11498</span><span>// If this is the first time seeing this property name, and if there is a</span></pre>
-<pre><span class="lineno"><a href="#line_6675" id="line_6675"> 6675.</a></span><span class="count                ">  11498</span><span>// tenure list, then it must be on the list. Otherwise, it must conform to</span></pre>
-<pre><span class="lineno"><a href="#line_6676" id="line_6676"> 6676.</a></span><span class="count                ">  11498</span><span>// the rules for good property names.</span></pre>
-<pre><span class="lineno"><a href="#line_6677" id="line_6677"> 6677.</a></span><span class="count                ">  11498</span><span></span></pre>
-<pre><span class="lineno"><a href="#line_6678" id="line_6678"> 6678.</a></span><span class="count                ">  11498</span><span>        } else {</span></pre>
-<pre><span class="lineno"><a href="#line_6679" id="line_6679"> 6679.</a></span><span class="count                ">   2162</span><span>            if (state.mode_property) {</span></pre>
-<pre><span class="lineno"><a href="#line_6680" id="line_6680"> 6680.</a></span><span class="count                ">   2162</span><span>                if (tenure[id] !== true) {</span></pre>
-<pre><span class="lineno"><a href="#line_6681" id="line_6681"> 6681.</a></span><span class="count                ">   2162</span><span></span></pre>
-<pre><span class="lineno"><a href="#line_6682" id="line_6682"> 6682.</a></span><span class="count                ">   2162</span><span>// test_cause:</span></pre>
-<pre><span class="lineno"><a href="#line_6683" id="line_6683"> 6683.</a></span><span class="count                ">   2162</span><span>// ["/*property aa*/\naa.bb", "survey", "unregistered_property_a", "bb", 4]</span></pre>
-<pre><span class="lineno"><a href="#line_6684" id="line_6684"> 6684.</a></span><span class="count                ">   2162</span><span></span></pre>
-<pre><span class="lineno"><a href="#line_6685" id="line_6685"> 6685.</a></span><span class="count                ">   2162</span><span>                    warn("unregistered_property_a", name);</span></pre>
-<pre><span class="lineno"><a href="#line_6686" id="line_6686"> 6686.</a></span><span class="count                ">   2162</span><span>                }</span></pre>
-<pre><span class="lineno"><a href="#line_6687" id="line_6687"> 6687.</a></span><span class="count                ">   2162</span><span>            } else if (</span></pre>
-<pre><span class="lineno"><a href="#line_6688" id="line_6688"> 6688.</a></span><span class="count                ">   2162</span><span>                !option_dict.name</span></pre>
-<pre><span class="lineno"><a href="#line_6689" id="line_6689"> 6689.</a></span><span class="count                ">   2162</span><span>                &amp;&amp; name.identifier</span></pre>
-<pre><span class="lineno"><a href="#line_6690" id="line_6690"> 6690.</a></span><span class="count                ">   2162</span><span>                &amp;&amp; (</span></pre>
-<pre><span class="lineno"><a href="#line_6691" id="line_6691"> 6691.</a></span><span class="count                ">   2162</span><span>                    // rx_weird_property</span></pre>
-<pre><span class="lineno"><a href="#line_6692" id="line_6692"> 6692.</a></span><span class="count                ">   2162</span><span>                    /^_|\$|Sync$|_$/m</span></pre>
-<pre><span class="lineno"><a href="#line_6693" id="line_6693"> 6693.</a></span><span class="count                ">   2162</span><span>                ).test(id)</span></pre>
-<pre><span class="lineno"><a href="#line_6694" id="line_6694"> 6694.</a></span><span class="count                ">   2162</span><span>            ) {</span></pre>
-<pre><span class="lineno"><a href="#line_6695" id="line_6695"> 6695.</a></span><span class="count                ">   2162</span><span></span></pre>
-<pre><span class="lineno"><a href="#line_6696" id="line_6696"> 6696.</a></span><span class="count                ">   2162</span><span>// test_cause:</span></pre>
-<pre><span class="lineno"><a href="#line_6697" id="line_6697"> 6697.</a></span><span class="count                ">   2162</span><span>// ["aa.$", "survey", "weird_property_a", "$", 4]</span></pre>
-<pre><span class="lineno"><a href="#line_6698" id="line_6698"> 6698.</a></span><span class="count                ">   2162</span><span>// ["aa._", "survey", "weird_property_a", "_", 4]</span></pre>
-<pre><span class="lineno"><a href="#line_6699" id="line_6699"> 6699.</a></span><span class="count                ">   2162</span><span>// ["aa._aa", "survey", "weird_property_a", "_aa", 4]</span></pre>
-<pre><span class="lineno"><a href="#line_6700" id="line_6700"> 6700.</a></span><span class="count                ">   2162</span><span>// ["aa.aaSync", "survey", "weird_property_a", "aaSync", 4]</span></pre>
-<pre><span class="lineno"><a href="#line_6701" id="line_6701"> 6701.</a></span><span class="count                ">   2162</span><span>// ["aa.aa_", "survey", "weird_property_a", "aa_", 4]</span></pre>
-<pre><span class="lineno"><a href="#line_6702" id="line_6702"> 6702.</a></span><span class="count                ">   2162</span><span></span></pre>
-<pre><span class="lineno"><a href="#line_6703" id="line_6703"> 6703.</a></span><span class="count                ">   2162</span><span>                warn("weird_property_a", name);</span></pre>
-<pre><span class="lineno"><a href="#line_6704" id="line_6704"> 6704.</a></span><span class="count                ">   2162</span><span>            }</span></pre>
-<pre><span class="lineno"><a href="#line_6705" id="line_6705"> 6705.</a></span><span class="count                ">   2162</span><span>            property_dict[id] = 1;</span></pre>
+<pre><span class="lineno"><a href="#line_6672" id="line_6672"> 6672.</a></span><span class="count                ">  11499</span><span>            property_dict[id] += 1;</span></pre>
+<pre><span class="lineno"><a href="#line_6673" id="line_6673"> 6673.</a></span><span class="count                ">  11499</span><span></span></pre>
+<pre><span class="lineno"><a href="#line_6674" id="line_6674"> 6674.</a></span><span class="count                ">  11499</span><span>// If this is the first time seeing this property name, and if there is a</span></pre>
+<pre><span class="lineno"><a href="#line_6675" id="line_6675"> 6675.</a></span><span class="count                ">  11499</span><span>// tenure list, then it must be on the list. Otherwise, it must conform to</span></pre>
+<pre><span class="lineno"><a href="#line_6676" id="line_6676"> 6676.</a></span><span class="count                ">  11499</span><span>// the rules for good property names.</span></pre>
+<pre><span class="lineno"><a href="#line_6677" id="line_6677"> 6677.</a></span><span class="count                ">  11499</span><span></span></pre>
+<pre><span class="lineno"><a href="#line_6678" id="line_6678"> 6678.</a></span><span class="count                ">  11499</span><span>        } else {</span></pre>
+<pre><span class="lineno"><a href="#line_6679" id="line_6679"> 6679.</a></span><span class="count                ">   2161</span><span>            if (state.mode_property) {</span></pre>
+<pre><span class="lineno"><a href="#line_6680" id="line_6680"> 6680.</a></span><span class="count                ">   2161</span><span>                if (tenure[id] !== true) {</span></pre>
+<pre><span class="lineno"><a href="#line_6681" id="line_6681"> 6681.</a></span><span class="count                ">   2161</span><span></span></pre>
+<pre><span class="lineno"><a href="#line_6682" id="line_6682"> 6682.</a></span><span class="count                ">   2161</span><span>// test_cause:</span></pre>
+<pre><span class="lineno"><a href="#line_6683" id="line_6683"> 6683.</a></span><span class="count                ">   2161</span><span>// ["/*property aa*/\naa.bb", "survey", "unregistered_property_a", "bb", 4]</span></pre>
+<pre><span class="lineno"><a href="#line_6684" id="line_6684"> 6684.</a></span><span class="count                ">   2161</span><span></span></pre>
+<pre><span class="lineno"><a href="#line_6685" id="line_6685"> 6685.</a></span><span class="count                ">   2161</span><span>                    warn("unregistered_property_a", name);</span></pre>
+<pre><span class="lineno"><a href="#line_6686" id="line_6686"> 6686.</a></span><span class="count                ">   2161</span><span>                }</span></pre>
+<pre><span class="lineno"><a href="#line_6687" id="line_6687"> 6687.</a></span><span class="count                ">   2161</span><span>            } else if (</span></pre>
+<pre><span class="lineno"><a href="#line_6688" id="line_6688"> 6688.</a></span><span class="count                ">   2161</span><span>                !option_dict.name</span></pre>
+<pre><span class="lineno"><a href="#line_6689" id="line_6689"> 6689.</a></span><span class="count                ">   2161</span><span>                &amp;&amp; name.identifier</span></pre>
+<pre><span class="lineno"><a href="#line_6690" id="line_6690"> 6690.</a></span><span class="count                ">   2161</span><span>                &amp;&amp; (</span></pre>
+<pre><span class="lineno"><a href="#line_6691" id="line_6691"> 6691.</a></span><span class="count                ">   2161</span><span>                    // rx_weird_property</span></pre>
+<pre><span class="lineno"><a href="#line_6692" id="line_6692"> 6692.</a></span><span class="count                ">   2161</span><span>                    /^_|\$|Sync$|_$/m</span></pre>
+<pre><span class="lineno"><a href="#line_6693" id="line_6693"> 6693.</a></span><span class="count                ">   2161</span><span>                ).test(id)</span></pre>
+<pre><span class="lineno"><a href="#line_6694" id="line_6694"> 6694.</a></span><span class="count                ">   2161</span><span>            ) {</span></pre>
+<pre><span class="lineno"><a href="#line_6695" id="line_6695"> 6695.</a></span><span class="count                ">   2161</span><span></span></pre>
+<pre><span class="lineno"><a href="#line_6696" id="line_6696"> 6696.</a></span><span class="count                ">   2161</span><span>// test_cause:</span></pre>
+<pre><span class="lineno"><a href="#line_6697" id="line_6697"> 6697.</a></span><span class="count                ">   2161</span><span>// ["aa.$", "survey", "weird_property_a", "$", 4]</span></pre>
+<pre><span class="lineno"><a href="#line_6698" id="line_6698"> 6698.</a></span><span class="count                ">   2161</span><span>// ["aa._", "survey", "weird_property_a", "_", 4]</span></pre>
+<pre><span class="lineno"><a href="#line_6699" id="line_6699"> 6699.</a></span><span class="count                ">   2161</span><span>// ["aa._aa", "survey", "weird_property_a", "_aa", 4]</span></pre>
+<pre><span class="lineno"><a href="#line_6700" id="line_6700"> 6700.</a></span><span class="count                ">   2161</span><span>// ["aa.aaSync", "survey", "weird_property_a", "aaSync", 4]</span></pre>
+<pre><span class="lineno"><a href="#line_6701" id="line_6701"> 6701.</a></span><span class="count                ">   2161</span><span>// ["aa.aa_", "survey", "weird_property_a", "aa_", 4]</span></pre>
+<pre><span class="lineno"><a href="#line_6702" id="line_6702"> 6702.</a></span><span class="count                ">   2161</span><span></span></pre>
+<pre><span class="lineno"><a href="#line_6703" id="line_6703"> 6703.</a></span><span class="count                ">   2161</span><span>                warn("weird_property_a", name);</span></pre>
+<pre><span class="lineno"><a href="#line_6704" id="line_6704"> 6704.</a></span><span class="count                ">   2161</span><span>            }</span></pre>
+<pre><span class="lineno"><a href="#line_6705" id="line_6705"> 6705.</a></span><span class="count                ">   2161</span><span>            property_dict[id] = 1;</span></pre>
 <pre><span class="lineno"><a href="#line_6706" id="line_6706"> 6706.</a></span><span class="count                ">  13660</span><span>        }</span></pre>
 <pre><span class="lineno"><a href="#line_6707" id="line_6707"> 6707.</a></span><span class="count                ">  13660</span><span>        return id;</span></pre>
 <pre><span class="lineno"><a href="#line_6708" id="line_6708"> 6708.</a></span><span class="count                ">  13660</span><span>    }</span></pre>
