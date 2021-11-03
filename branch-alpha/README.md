@@ -226,6 +226,10 @@ import fs from "fs";
 
 ![screenshot.svg](https://jslint-org.github.io/jslint/branch-alpha/.artifact/screenshot_js_jslint_report_file.svg)
 
+- screenshot file [.artifact/jslint_report_hello.html](https://jslint-org.github.io/jslint/branch-alpha/.artifact/jslint_report_hello.html)
+
+[![screenshot.png](https://jslint-org.github.io/jslint/branch-alpha/.artifact/screenshot_browser__2f.artifact_2fjslint_report_hello.html.png)](https://jslint-org.github.io/jslint/branch-alpha/.artifact/jslint_report_hello.html)
+
 
 <br><br>
 # Quickstart V8 Coverage Report
