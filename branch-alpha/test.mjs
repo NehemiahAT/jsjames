@@ -256,7 +256,7 @@ try {
                 + "}\n"
             ),
 
-// PR-xxx - Add top-level-await support.
+// PR-370 - Add top-level-await support.
 
             "await String();\n"
         ],
