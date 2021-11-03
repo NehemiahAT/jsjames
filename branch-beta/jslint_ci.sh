@@ -379,8 +379,8 @@ import moduleFs from "fs";
         let ii = -1;
         let toc = "\n# Table of Contents\n";
         data.replace((
-            /(\n\n\n#|\n###) (.*)/g
-        ), function (ignore, level, title) {
+            /(\n{3,}#|\n+?<br><br>\n#|\n+?###) (\S.*)/g
+        ), function (match0, level, title) {
             if (title === "Table of Contents") {
                 ii += 1;
                 return "";
@@ -388,14 +388,16 @@ import moduleFs from "fs";
             if (ii < 0) {
                 return "";
             }
-            switch (level.trim()) {
-            case "#":
+            switch (level) {
+            case "\n\n###":
+                toc += "    - [" + title + "](#";
+                break;
+            case "\n\n\n<br><br>\n#":
                 ii += 1;
                 toc += "\n" + ii + ". [" + title + "](#";
                 break;
-            case "###":
-                toc += "    - [" + title + "](#";
-                break;
+            default:
+                throw new Error(JSON.stringify(match0));
             }
             toc += title.toLowerCase().replace((
                 /[^ \-0-9A-Z_a-z]/g
