@@ -5,7 +5,7 @@
 # http://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
 
 # sh one-liner
-#
+# git add .; npm run test2; git checkout .
 # git branch -d -r origin/aa
 # git config --global diff.algorithm histogram
 # git fetch origin alpha beta master && git fetch upstream alpha beta master
@@ -379,7 +379,8 @@ import moduleFs from "fs";
         let ii = -1;
         let toc = "\n# Table of Contents\n";
         data.replace((
-            /(\n{3,}#|\n+?<br><br>\n#|\n+?###) (\S.*)/g
+            // /(\n{3,}#|\n+?<br><br>\n#|\n+?###) (\S.*)/g
+            /((?:\n{3,}|\n+?(?:<br>)+?\n)(?:#|###)) (\S.*)/g
         ), function (match0, level, title) {
             if (title === "Table of Contents") {
                 ii += 1;
@@ -389,12 +390,12 @@ import moduleFs from "fs";
                 return "";
             }
             switch (level) {
-            case "\n\n###":
-                toc += "    - [" + title + "](#";
-                break;
             case "\n\n\n<br><br>\n#":
                 ii += 1;
                 toc += "\n" + ii + ". [" + title + "](#";
+                break;
+            case "\n\n\n<br><br>\n###":
+                toc += "    - [" + title + "](#";
                 break;
             default:
                 throw new Error(JSON.stringify(match0));

@@ -71,6 +71,8 @@ Douglas Crockford <douglas@crockford.com>
 <br><br>
 # Quickstart Install
 
+
+<br><br>
 ### To install, just download https://www.jslint.com/jslint.mjs and save to file:
 ```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_sh_install_download.svg -->
 #!/bin/sh
@@ -81,6 +83,8 @@ curl -L https://www.jslint.com/jslint.mjs > jslint.mjs
 
 ![screenshot.svg](https://jslint-org.github.io/jslint/branch-beta/.artifact/screenshot_sh_install_download.svg)
 
+
+<br><br>
 ### To run `jslint.mjs` in shell:
 ```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_sh_jslint_file.svg -->
 #!/bin/sh
@@ -93,6 +97,8 @@ node jslint.mjs hello.js
 
 ![screenshot.svg](https://jslint-org.github.io/jslint/branch-beta/.artifact/screenshot_sh_jslint_file.svg)
 
+
+<br><br>
 ### To import `jslint.mjs` in ES Module environment:
 ```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_js_import_esm.svg -->
 #!/bin/sh
@@ -125,6 +131,8 @@ result.warnings.forEach(function ({
 
 ![screenshot.svg](https://jslint-org.github.io/jslint/branch-beta/.artifact/screenshot_js_import_esm.svg)
 
+
+<br><br>
 ### To import `jslint.mjs` in CommonJS environment:
 ```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_js_import_cjs.svg -->
 #!/bin/sh
@@ -160,6 +168,8 @@ node --eval '
 
 ![screenshot.svg](https://jslint-org.github.io/jslint/branch-beta/.artifact/screenshot_js_import_cjs.svg)
 
+
+<br><br>
 ### To JSLint entire directory in shell:
 ```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_sh_jslint_dir.svg -->
 #!/bin/sh
@@ -176,6 +186,8 @@ node jslint.mjs .
 <br><br>
 # Quickstart JSLint Report
 
+
+<br><br>
 ### To create a JSLint report in shell:
 ```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_sh_jslint_report_file.svg -->
 #!/bin/sh
@@ -196,6 +208,8 @@ node jslint.mjs \
 
 [![screenshot.png](https://jslint-org.github.io/jslint/branch-beta/.artifact/screenshot_browser__2f.artifact_2fjslint_report_hello.html.png)](https://jslint-org.github.io/jslint/branch-beta/.artifact/jslint_report_hello.html)
 
+
+<br><br>
 ### To create a JSLint report in javascript:
 ```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_js_jslint_report_file.svg -->
 #!/bin/sh
@@ -234,6 +248,8 @@ import fs from "fs";
 <br><br>
 # Quickstart V8 Coverage Report
 
+
+<br><br>
 ### To create V8 coverage report from Node.js / Npm program in shell:
 ```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_sh_coverage_report_spawn.svg -->
 #!/bin/sh
@@ -264,6 +280,8 @@ node ../jslint.mjs \
 
 ![screenshot.svg](https://jslint-org.github.io/jslint/branch-beta/.artifact/screenshot_sh_coverage_report_spawn.svg)
 
+
+<br><br>
 ### To create V8 coverage report from Node.js / Npm program in javascript:
 ```shell <!-- shRunWithScreenshotTxt .artifact/screenshot_js_coverage_report_spawn.svg -->
 #!/bin/sh
@@ -308,6 +326,8 @@ import jslint from "../jslint.mjs";
 <br><br>
 # Plugin Vim
 
+
+<br><br>
 ### To run JSLint in Vim:
 1. Download and save [`jslint.mjs`](https://www.jslint.com/jslint.mjs), [`jslint.vim`](https://www.jslint.com/jslint.vim) to directory `~/.vim/`
 2. Add vim-command `:source ~/.vim/jslint.vim` to file `~/.vimrc`
