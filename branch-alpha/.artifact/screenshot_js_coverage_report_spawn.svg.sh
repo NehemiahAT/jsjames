@@ -19,7 +19,11 @@ printf '> #!/bin/sh
 > 
 >     await jslint.v8CoverageReportCreate({
 >         coverageDir: "../.artifact/coverage_sqlite3_js/",
->         processArgv: ["npm", "run", "test"]
+>         processArgv: [
+>             "--include=lib/sqlite3-binding.js,lib/sqlite3.js",
+>             "--include=lib/trace.js",
+>             "npm", "run", "test"
+>         ]
 >     });
 > }());
 > 
@@ -50,9 +54,13 @@ import jslint from "../jslint.mjs";
 
     await jslint.v8CoverageReportCreate({
         coverageDir: "../.artifact/coverage_sqlite3_js/",
-        processArgv: ["npm", "run", "test"]
+        processArgv: [
+            "--include=lib/sqlite3-binding.js,lib/sqlite3.js",
+            "--include=lib/trace.js",
+            "npm", "run", "test"
+        ]
     });
 }());
 
-' 2>&1 | head -n 100
+' 2>&1 | head -n 32
 )
