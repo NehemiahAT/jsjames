@@ -2973,12 +2973,10 @@ function jslint_phase2_lex(state) {
         switch (val && key) {
 
 // Assign global browser variables to global_dict.
-// /*jslint beta, browser, devel*/
-// console.log(JSON.stringify(Array.from([
-//     ...
-// ]).filter(function (key) {
-//     return window.hasOwnProperty(key);
-// }), undefined, 4));
+/*
+// /\*jslint beta, browser, devel*\/
+console.log(JSON.stringify(Object.keys(window).sort(), undefined, 4));
+*/
 
         case "browser":
             object_assign_from_list(global_dict, [
@@ -2986,6 +2984,7 @@ function jslint_phase2_lex(state) {
 // Shared with Node.js.
 
                 "AbortController",
+                // "Buffer",
                 "DOMException",
                 "Event",
                 "EventTarget",
@@ -2997,17 +2996,33 @@ function jslint_phase2_lex(state) {
                 "URL",
                 "URLSearchParams",
                 "WebAssembly",
+                // "__dirname",
+                // "__filename",
                 // "atob",
                 // "btoa",
+                // "clearImmediate",
                 "clearInterval",
                 "clearTimeout",
                 // "console",
+                // "exports",
+                // "global",
+                // "module",
                 "performance",
+                // "process",
                 "queueMicrotask",
+                // "require",
+                // "setImmediate",
                 "setInterval",
                 "setTimeout",
+                "structuredClone",
 
-// Browser only.
+// Web worker only.
+// https://github.com/mdn/content/blob/main/files/en-us/web/api
+// /workerglobalscope/index.md
+
+                "importScripts",
+
+// Window.
 
                 // "CharacterData",
                 // "DocumentType",
@@ -3031,6 +3046,7 @@ function jslint_phase2_lex(state) {
                 // "event",
                 "fetch",
                 // "history",
+                "indexedDb",
                 "localStorage",
                 "location",
                 // "name",
@@ -3077,8 +3093,8 @@ import https from "https";
     let result = "";
     await new Promise(function (resolve) {
         https.get((
-            "https://raw.githubusercontent.com/mdn/content/main/files/"
-            + "en-us/web/javascript/reference/global_objects/index.md"
+            "https://raw.githubusercontent.com/mdn/content/main/files"
+            + "/en-us/web/javascript/reference/global_objects/index.md"
         ), function (res) {
             res.on("data", function (chunk) {
                 result += chunk;
@@ -3170,8 +3186,8 @@ import moduleHttps from "https";
     let result = "";
     await new Promise(function (resolve) {
         moduleHttps.get((
-            "https://raw.githubusercontent.com/nodejs/node/master/doc/api/"
-            + "globals.md"
+            "https://raw.githubusercontent.com/nodejs/node/master/doc/api"
+            + "/globals.md"
         ), function (res) {
             res.on("data", function (chunk) {
                 result += chunk;
@@ -3221,7 +3237,8 @@ import moduleHttps from "https";
                 "require",
                 "setImmediate",
                 "setInterval",
-                "setTimeout"
+                "setTimeout",
+                "structuredClone"
             ], "Node.js");
             break;
         }
@@ -10676,7 +10693,7 @@ function sentinel() {}
         processArgElem[1] = processArgElem.slice(1).join("=");
         switch (processArgElem[0]) {
 
-// PR-xxx - add cli-option `--exclude=aa,bb`
+// PR-371 - add cli-option `--exclude=aa,bb`
 
         case "--exclude":
             fileExcludeList = fileExcludeList.concat(
@@ -10684,7 +10701,7 @@ function sentinel() {}
             );
             break;
 
-// PR-xxx - add cli-option `--exclude-node-modules=false`
+// PR-371 - add cli-option `--exclude-node-modules=false`
 
         case "--exclude-node-modules":
             fileIncludeNodeModules = (
@@ -10692,7 +10709,7 @@ function sentinel() {}
             ).test(processArgElem[1]);
             break;
 
-// PR-xxx - add cli-option `--include=aa,bb`
+// PR-371 - add cli-option `--include=aa,bb`
 
         case "--include":
             fileIncludeList = fileIncludeList.concat(
@@ -10772,7 +10789,7 @@ function sentinel() {}
                 !pathname
                 || pathname.startsWith("[")
 
-// PR-xxx - Filter directory node_modules.
+// PR-371 - Filter directory node_modules.
 
                 || (
                     !fileIncludeNodeModules
@@ -10781,11 +10798,11 @@ function sentinel() {}
                     ).test(pathname)
                 )
 
-// PR-xxx - Filter fileExcludeList.
+// PR-371 - Filter fileExcludeList.
 
                 || fileExcludeList.indexOf(pathname) >= 0
 
-// PR-xxx - Filter fileIncludeList.
+// PR-371 - Filter fileIncludeList.
 
                 || (
                     fileIncludeList.length > 0
