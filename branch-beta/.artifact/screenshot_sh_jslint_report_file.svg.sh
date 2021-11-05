@@ -19,5 +19,5 @@ printf "function foo() {console.log('hello world');}\n" > hello.js
 
 node jslint.mjs \
     jslint_report=.artifact/jslint_report_hello.html \
-    hello.js 2>&1 | head -n 100
+    hello.js 2>&1 | head -n 32
 )

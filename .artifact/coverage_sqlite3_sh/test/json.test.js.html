@@ -10,6 +10,8 @@ box-sizing: border-box;
     font-family: consolas, menlo, monospace;
 }
 /*csslint ignore:end*/
+
+/* css - coverage_report - general */
 body {
     margin: 0;
 }
@@ -22,8 +24,9 @@ body {
 .coverage td,
 .coverage th {
     border: 1px solid #777;
+    line-height: 20px;
     margin: 0;
-    padding: 5px;
+    padding: 5px 10px;
 }
 .coverage td span {
     display: inline-block;
@@ -63,30 +66,30 @@ body {
     margin-bottom: 10px;
 }
 
+/* css - coverage_report - color */
 .coverage td,
 .coverage th {
     background: #fff;
 }
+.coverage .count,
+.coverage .coverageHigh {
+    background: #9d9;
+}
 .coverage .count {
-    background: #9d9;
-    color: #777;
+    color: #666;
 }
-.coverage .coverageHigh{
-    background: #9d9;
-}
-.coverage .coverageIgnore{
+.coverage .coverageIgnore {
     background: #ccc;
 }
-.coverage .coverageLow{
+.coverage .coverageLow,
+.coverage .uncovered {
     background: #ebb;
 }
-.coverage .coverageMedium{
+.coverage .coverageMedium {
     background: #fd7;
 }
 .coverage .footer,
-.coverage .header {
-    background: #ddd;
-}
+.coverage .header,
 .coverage .lineno {
     background: #ddd;
 }
@@ -96,17 +99,15 @@ body {
 .coverage .percentbar div {
     background: #666;
 }
-.coverage .uncovered {
-    background: #dbb;
-}
 
+/* css - coverage_report - important */
 .coverage pre:hover span,
 .coverage tr:hover td {
     background: #7d7;
 }
 .coverage pre:hover span.uncovered,
 .coverage tr:hover td.coverageLow {
-    background: #d99;
+    background: #f99;
 }
 </style>
 </head>
@@ -119,6 +120,7 @@ body {
     <tr>
     <th>Files covered</th>
     <th>Lines</th>
+    <th>Remaining</th>
     </tr>
 </thead>
 <tbody>
@@ -133,6 +135,10 @@ body {
          65.21 %<br>
         15 / 23
     </td>
+    <td style="text-align: right;">
+        <br>
+        8 / 23
+    </td>
     </tr>
 </tbody>
 </table>
@@ -142,14 +148,14 @@ body {
 <div class="content">
 <pre><span class="lineno"><a href="#line_1" id="line_1">    1.</a></span><span class="count                ">      1</span><span>var sqlite3 = require('..');</span></pre>
 <pre><span class="lineno"><a href="#line_2" id="line_2">    2.</a></span><span class="count                ">      1</span><span></span></pre>
-<pre><span class="lineno"><a href="#line_3" id="line_3">    3.</a></span><span class="count                uncovered">      0</span><span>if( process.env.NODE_SQLITE3_JSON1 === 'no' )</span><span class="uncovered">{</span></pre>
-<pre><span class="lineno"><a href="#line_4" id="line_4">    4.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">    describe('json', function() {</span></pre>
-<pre><span class="lineno"><a href="#line_5" id="line_5">    5.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">        it(</span></pre>
-<pre><span class="lineno"><a href="#line_6" id="line_6">    6.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">            'skips JSON tests when --sqlite=/usr (or similar) is tested',</span></pre>
-<pre><span class="lineno"><a href="#line_7" id="line_7">    7.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">            function(){}</span></pre>
-<pre><span class="lineno"><a href="#line_8" id="line_8">    8.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">        );</span></pre>
-<pre><span class="lineno"><a href="#line_9" id="line_9">    9.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">    });</span></pre>
-<pre><span class="lineno"><a href="#line_10" id="line_10">   10.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">}</span><span> else {</span></pre>
+<pre><span class="lineno"><a href="#line_3" id="line_3">    3.</a></span><span class="count                uncovered">     -0</span><span>if( process.env.NODE_SQLITE3_JSON1 === 'no' )</span><span class="uncovered">{</span></pre>
+<pre><span class="lineno"><a href="#line_4" id="line_4">    4.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">    describe('json', function() {</span></pre>
+<pre><span class="lineno"><a href="#line_5" id="line_5">    5.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">        it(</span></pre>
+<pre><span class="lineno"><a href="#line_6" id="line_6">    6.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">            'skips JSON tests when --sqlite=/usr (or similar) is tested',</span></pre>
+<pre><span class="lineno"><a href="#line_7" id="line_7">    7.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">            function(){}</span></pre>
+<pre><span class="lineno"><a href="#line_8" id="line_8">    8.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">        );</span></pre>
+<pre><span class="lineno"><a href="#line_9" id="line_9">    9.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">    });</span></pre>
+<pre><span class="lineno"><a href="#line_10" id="line_10">   10.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">}</span><span> else {</span></pre>
 <pre><span class="lineno"><a href="#line_11" id="line_11">   11.</a></span><span class="count                ">      1</span><span>    describe('json', function() {</span></pre>
 <pre><span class="lineno"><a href="#line_12" id="line_12">   12.</a></span><span class="count                ">      1</span><span>        var db;</span></pre>
 <pre><span class="lineno"><a href="#line_13" id="line_13">   13.</a></span><span class="count                ">      1</span><span></span></pre>

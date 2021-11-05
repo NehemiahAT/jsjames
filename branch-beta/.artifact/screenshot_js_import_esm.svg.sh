@@ -51,5 +51,5 @@ result.warnings.forEach(function ({
     console.error(formatted_message);
 });
 
-' 2>&1 | head -n 100
+' 2>&1 | head -n 32
 )

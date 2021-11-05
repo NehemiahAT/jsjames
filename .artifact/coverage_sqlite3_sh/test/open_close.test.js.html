@@ -10,6 +10,8 @@ box-sizing: border-box;
     font-family: consolas, menlo, monospace;
 }
 /*csslint ignore:end*/
+
+/* css - coverage_report - general */
 body {
     margin: 0;
 }
@@ -22,8 +24,9 @@ body {
 .coverage td,
 .coverage th {
     border: 1px solid #777;
+    line-height: 20px;
     margin: 0;
-    padding: 5px;
+    padding: 5px 10px;
 }
 .coverage td span {
     display: inline-block;
@@ -63,30 +66,30 @@ body {
     margin-bottom: 10px;
 }
 
+/* css - coverage_report - color */
 .coverage td,
 .coverage th {
     background: #fff;
 }
+.coverage .count,
+.coverage .coverageHigh {
+    background: #9d9;
+}
 .coverage .count {
-    background: #9d9;
-    color: #777;
+    color: #666;
 }
-.coverage .coverageHigh{
-    background: #9d9;
-}
-.coverage .coverageIgnore{
+.coverage .coverageIgnore {
     background: #ccc;
 }
-.coverage .coverageLow{
+.coverage .coverageLow,
+.coverage .uncovered {
     background: #ebb;
 }
-.coverage .coverageMedium{
+.coverage .coverageMedium {
     background: #fd7;
 }
 .coverage .footer,
-.coverage .header {
-    background: #ddd;
-}
+.coverage .header,
 .coverage .lineno {
     background: #ddd;
 }
@@ -96,17 +99,15 @@ body {
 .coverage .percentbar div {
     background: #666;
 }
-.coverage .uncovered {
-    background: #dbb;
-}
 
+/* css - coverage_report - important */
 .coverage pre:hover span,
 .coverage tr:hover td {
     background: #7d7;
 }
 .coverage pre:hover span.uncovered,
 .coverage tr:hover td.coverageLow {
-    background: #d99;
+    background: #f99;
 }
 </style>
 </head>
@@ -119,6 +120,7 @@ body {
     <tr>
     <th>Files covered</th>
     <th>Lines</th>
+    <th>Remaining</th>
     </tr>
 </thead>
 <tbody>
@@ -132,6 +134,10 @@ body {
     <td style="text-align: right;">
          93.61 %<br>
         176 / 188
+    </td>
+    <td style="text-align: right;">
+        <br>
+        12 / 188
     </td>
     </tr>
 </tbody>
@@ -197,7 +203,7 @@ body {
 <pre><span class="lineno"><a href="#line_55" id="line_55">   55.</a></span><span class="count                ">      1</span><span>    });</span></pre>
 <pre><span class="lineno"><a href="#line_56" id="line_56">   56.</a></span><span class="count                ">      1</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_57" id="line_57">   57.</a></span><span class="count                ">      1</span><span></span></pre>
-<pre><span class="lineno"><a href="#line_58" id="line_58">   58.</a></span><span class="count                uncovered">      0</span><span>    (sqlite3.VERSION_NUMBER &lt; 3008000 </span><span class="uncovered">? describe.skip</span><span> : describe)('open and close shared memory database', function() {</span></pre>
+<pre><span class="lineno"><a href="#line_58" id="line_58">   58.</a></span><span class="count                uncovered">     -0</span><span>    (sqlite3.VERSION_NUMBER &lt; 3008000 </span><span class="uncovered">? describe.skip</span><span> : describe)('open and close shared memory database', function() {</span></pre>
 <pre><span class="lineno"><a href="#line_59" id="line_59">   59.</a></span><span class="count                ">      1</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_60" id="line_60">   60.</a></span><span class="count                ">      1</span><span>        var db1;</span></pre>
 <pre><span class="lineno"><a href="#line_61" id="line_61">   61.</a></span><span class="count                ">      1</span><span>        var db2;</span></pre>
@@ -216,7 +222,7 @@ body {
 <pre><span class="lineno"><a href="#line_74" id="line_74">   74.</a></span><span class="count                ">      1</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_75" id="line_75">   75.</a></span><span class="count                ">      1</span><span>        it('second database should get the user_version', function(done) {</span></pre>
 <pre><span class="lineno"><a href="#line_76" id="line_76">   76.</a></span><span class="count                ">      1</span><span>            db2.get('PRAGMA user_version', function(err, row) {</span></pre>
-<pre><span class="lineno"><a href="#line_77" id="line_77">   77.</a></span><span class="count                uncovered">      0</span><span>                if (err) </span><span class="uncovered">throw err;</span></pre>
+<pre><span class="lineno"><a href="#line_77" id="line_77">   77.</a></span><span class="count                uncovered">     -0</span><span>                if (err) </span><span class="uncovered">throw err;</span></pre>
 <pre><span class="lineno"><a href="#line_78" id="line_78">   78.</a></span><span class="count                ">      1</span><span>                assert.equal(row.user_version, 42);</span></pre>
 <pre><span class="lineno"><a href="#line_79" id="line_79">   79.</a></span><span class="count                ">      1</span><span>                done();</span></pre>
 <pre><span class="lineno"><a href="#line_80" id="line_80">   80.</a></span><span class="count                ">      1</span><span>            });</span></pre>
@@ -237,11 +243,11 @@ body {
 <pre><span class="lineno"><a href="#line_95" id="line_95">   95.</a></span><span class="count                ">      1</span><span>        var db = new sqlite3.Database('/test/tmp/directory-does-not-exist/test.db', function(err) {</span></pre>
 <pre><span class="lineno"><a href="#line_96" id="line_96">   96.</a></span><span class="count                ">      1</span><span>            if (err &amp;&amp; err.errno === sqlite3.CANTOPEN) {</span></pre>
 <pre><span class="lineno"><a href="#line_97" id="line_97">   97.</a></span><span class="count                ">      1</span><span>                done();</span></pre>
-<pre><span class="lineno"><a href="#line_98" id="line_98">   98.</a></span><span class="count                uncovered">      0</span><span>            }</span><span class="uncovered"> else if (err) {</span></pre>
-<pre><span class="lineno"><a href="#line_99" id="line_99">   99.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">                done(err);</span></pre>
-<pre><span class="lineno"><a href="#line_100" id="line_100">  100.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">            } else {</span></pre>
-<pre><span class="lineno"><a href="#line_101" id="line_101">  101.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">                done('Opened database that should be inaccessible');</span></pre>
-<pre><span class="lineno"><a href="#line_102" id="line_102">  102.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">            }</span></pre>
+<pre><span class="lineno"><a href="#line_98" id="line_98">   98.</a></span><span class="count                uncovered">     -0</span><span>            }</span><span class="uncovered"> else if (err) {</span></pre>
+<pre><span class="lineno"><a href="#line_99" id="line_99">   99.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">                done(err);</span></pre>
+<pre><span class="lineno"><a href="#line_100" id="line_100">  100.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">            } else {</span></pre>
+<pre><span class="lineno"><a href="#line_101" id="line_101">  101.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">                done('Opened database that should be inaccessible');</span></pre>
+<pre><span class="lineno"><a href="#line_102" id="line_102">  102.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">            }</span></pre>
 <pre><span class="lineno"><a href="#line_103" id="line_103">  103.</a></span><span class="count                ">      1</span><span>        });</span></pre>
 <pre><span class="lineno"><a href="#line_104" id="line_104">  104.</a></span><span class="count                ">      1</span><span>    });</span></pre>
 <pre><span class="lineno"><a href="#line_105" id="line_105">  105.</a></span><span class="count                ">      1</span><span></span></pre>
@@ -255,11 +261,11 @@ body {
 <pre><span class="lineno"><a href="#line_113" id="line_113">  113.</a></span><span class="count                ">      1</span><span>            new sqlite3.Database('tmp/test_readonly.db', sqlite3.OPEN_READONLY, function(err) {</span></pre>
 <pre><span class="lineno"><a href="#line_114" id="line_114">  114.</a></span><span class="count                ">      1</span><span>                if (err &amp;&amp; err.errno === sqlite3.CANTOPEN) {</span></pre>
 <pre><span class="lineno"><a href="#line_115" id="line_115">  115.</a></span><span class="count                ">      1</span><span>                    done();</span></pre>
-<pre><span class="lineno"><a href="#line_116" id="line_116">  116.</a></span><span class="count                uncovered">      0</span><span>                }</span><span class="uncovered"> else if (err) {</span></pre>
-<pre><span class="lineno"><a href="#line_117" id="line_117">  117.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">                    done(err);</span></pre>
-<pre><span class="lineno"><a href="#line_118" id="line_118">  118.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">                } else {</span></pre>
-<pre><span class="lineno"><a href="#line_119" id="line_119">  119.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">                    done('Created database without create flag');</span></pre>
-<pre><span class="lineno"><a href="#line_120" id="line_120">  120.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">                }</span></pre>
+<pre><span class="lineno"><a href="#line_116" id="line_116">  116.</a></span><span class="count                uncovered">     -0</span><span>                }</span><span class="uncovered"> else if (err) {</span></pre>
+<pre><span class="lineno"><a href="#line_117" id="line_117">  117.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">                    done(err);</span></pre>
+<pre><span class="lineno"><a href="#line_118" id="line_118">  118.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">                } else {</span></pre>
+<pre><span class="lineno"><a href="#line_119" id="line_119">  119.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">                    done('Created database without create flag');</span></pre>
+<pre><span class="lineno"><a href="#line_120" id="line_120">  120.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">                }</span></pre>
 <pre><span class="lineno"><a href="#line_121" id="line_121">  121.</a></span><span class="count                ">      1</span><span>            });</span></pre>
 <pre><span class="lineno"><a href="#line_122" id="line_122">  122.</a></span><span class="count                ">      1</span><span>        });</span></pre>
 <pre><span class="lineno"><a href="#line_123" id="line_123">  123.</a></span><span class="count                ">      1</span><span></span></pre>

@@ -10,6 +10,8 @@ box-sizing: border-box;
     font-family: consolas, menlo, monospace;
 }
 /*csslint ignore:end*/
+
+/* css - coverage_report - general */
 body {
     margin: 0;
 }
@@ -22,8 +24,9 @@ body {
 .coverage td,
 .coverage th {
     border: 1px solid #777;
+    line-height: 20px;
     margin: 0;
-    padding: 5px;
+    padding: 5px 10px;
 }
 .coverage td span {
     display: inline-block;
@@ -63,30 +66,30 @@ body {
     margin-bottom: 10px;
 }
 
+/* css - coverage_report - color */
 .coverage td,
 .coverage th {
     background: #fff;
 }
+.coverage .count,
+.coverage .coverageHigh {
+    background: #9d9;
+}
 .coverage .count {
-    background: #9d9;
-    color: #777;
+    color: #666;
 }
-.coverage .coverageHigh{
-    background: #9d9;
-}
-.coverage .coverageIgnore{
+.coverage .coverageIgnore {
     background: #ccc;
 }
-.coverage .coverageLow{
+.coverage .coverageLow,
+.coverage .uncovered {
     background: #ebb;
 }
-.coverage .coverageMedium{
+.coverage .coverageMedium {
     background: #fd7;
 }
 .coverage .footer,
-.coverage .header {
-    background: #ddd;
-}
+.coverage .header,
 .coverage .lineno {
     background: #ddd;
 }
@@ -96,17 +99,15 @@ body {
 .coverage .percentbar div {
     background: #666;
 }
-.coverage .uncovered {
-    background: #dbb;
-}
 
+/* css - coverage_report - important */
 .coverage pre:hover span,
 .coverage tr:hover td {
     background: #7d7;
 }
 .coverage pre:hover span.uncovered,
 .coverage tr:hover td.coverageLow {
-    background: #d99;
+    background: #f99;
 }
 </style>
 </head>
@@ -119,6 +120,7 @@ body {
     <tr>
     <th>Files covered</th>
     <th>Lines</th>
+    <th>Remaining</th>
     </tr>
 </thead>
 <tbody>
@@ -132,6 +134,10 @@ body {
     <td style="text-align: right;">
          89.65 %<br>
         52 / 58
+    </td>
+    <td style="text-align: right;">
+        <br>
+        6 / 58
     </td>
     </tr>
 </tbody>
@@ -163,17 +169,17 @@ body {
 <pre><span class="lineno"><a href="#line_21" id="line_21">   21.</a></span><span class="count                ">      1</span><span>                assert.ok(!create);</span></pre>
 <pre><span class="lineno"><a href="#line_22" id="line_22">   22.</a></span><span class="count                ">      1</span><span>                assert.equal(sql, "CREATE TABLE foo (id int)");</span></pre>
 <pre><span class="lineno"><a href="#line_23" id="line_23">   23.</a></span><span class="count                ">      1</span><span>                create = true;</span></pre>
-<pre><span class="lineno"><a href="#line_24" id="line_24">   24.</a></span><span class="count                uncovered">      0</span><span>            }</span></pre>
-<pre><span class="lineno"><a href="#line_25" id="line_25">   25.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">            else {</span></pre>
-<pre><span class="lineno"><a href="#line_26" id="line_26">   26.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">                assert.ok(false);</span></pre>
-<pre><span class="lineno"><a href="#line_27" id="line_27">   27.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">            }</span></pre>
+<pre><span class="lineno"><a href="#line_24" id="line_24">   24.</a></span><span class="count                uncovered">     -0</span><span>            }</span></pre>
+<pre><span class="lineno"><a href="#line_25" id="line_25">   25.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">            else {</span></pre>
+<pre><span class="lineno"><a href="#line_26" id="line_26">   26.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">                assert.ok(false);</span></pre>
+<pre><span class="lineno"><a href="#line_27" id="line_27">   27.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">            }</span></pre>
 <pre><span class="lineno"><a href="#line_28" id="line_28">   28.</a></span><span class="count                ">      2</span><span>        });</span></pre>
 <pre><span class="lineno"><a href="#line_29" id="line_29">   29.</a></span><span class="count                ">      1</span><span>    });</span></pre>
 <pre><span class="lineno"><a href="#line_30" id="line_30">   30.</a></span><span class="count                ">      1</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_31" id="line_31">   31.</a></span><span class="count                ">      1</span><span>    it('should profile a create table', function(done) {</span></pre>
 <pre><span class="lineno"><a href="#line_32" id="line_32">   32.</a></span><span class="count                ">      1</span><span>        assert.ok(!create);</span></pre>
 <pre><span class="lineno"><a href="#line_33" id="line_33">   33.</a></span><span class="count                ">      1</span><span>        db.run("CREATE TABLE foo (id int)", function(err) {</span></pre>
-<pre><span class="lineno"><a href="#line_34" id="line_34">   34.</a></span><span class="count                uncovered">      0</span><span>            if (err) </span><span class="uncovered">throw err;</span></pre>
+<pre><span class="lineno"><a href="#line_34" id="line_34">   34.</a></span><span class="count                uncovered">     -0</span><span>            if (err) </span><span class="uncovered">throw err;</span></pre>
 <pre><span class="lineno"><a href="#line_35" id="line_35">   35.</a></span><span class="count                ">      1</span><span>            setImmediate(function() {</span></pre>
 <pre><span class="lineno"><a href="#line_36" id="line_36">   36.</a></span><span class="count                ">      1</span><span>                assert.ok(create);</span></pre>
 <pre><span class="lineno"><a href="#line_37" id="line_37">   37.</a></span><span class="count                ">      1</span><span>                done();</span></pre>
@@ -185,7 +191,7 @@ body {
 <pre><span class="lineno"><a href="#line_43" id="line_43">   43.</a></span><span class="count                ">      1</span><span>    it('should profile a select', function(done) {</span></pre>
 <pre><span class="lineno"><a href="#line_44" id="line_44">   44.</a></span><span class="count                ">      1</span><span>        assert.ok(!select);</span></pre>
 <pre><span class="lineno"><a href="#line_45" id="line_45">   45.</a></span><span class="count                ">      1</span><span>        db.run("SELECT * FROM foo", function(err) {</span></pre>
-<pre><span class="lineno"><a href="#line_46" id="line_46">   46.</a></span><span class="count                uncovered">      0</span><span>            if (err) </span><span class="uncovered">throw err;</span></pre>
+<pre><span class="lineno"><a href="#line_46" id="line_46">   46.</a></span><span class="count                uncovered">     -0</span><span>            if (err) </span><span class="uncovered">throw err;</span></pre>
 <pre><span class="lineno"><a href="#line_47" id="line_47">   47.</a></span><span class="count                ">      1</span><span>            setImmediate(function() {</span></pre>
 <pre><span class="lineno"><a href="#line_48" id="line_48">   48.</a></span><span class="count                ">      1</span><span>                assert.ok(select);</span></pre>
 <pre><span class="lineno"><a href="#line_49" id="line_49">   49.</a></span><span class="count                ">      1</span><span>                done();</span></pre>

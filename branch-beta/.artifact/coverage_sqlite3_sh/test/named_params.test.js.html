@@ -10,6 +10,8 @@ box-sizing: border-box;
     font-family: consolas, menlo, monospace;
 }
 /*csslint ignore:end*/
+
+/* css - coverage_report - general */
 body {
     margin: 0;
 }
@@ -22,8 +24,9 @@ body {
 .coverage td,
 .coverage th {
     border: 1px solid #777;
+    line-height: 20px;
     margin: 0;
-    padding: 5px;
+    padding: 5px 10px;
 }
 .coverage td span {
     display: inline-block;
@@ -63,30 +66,30 @@ body {
     margin-bottom: 10px;
 }
 
+/* css - coverage_report - color */
 .coverage td,
 .coverage th {
     background: #fff;
 }
+.coverage .count,
+.coverage .coverageHigh {
+    background: #9d9;
+}
 .coverage .count {
-    background: #9d9;
-    color: #777;
+    color: #666;
 }
-.coverage .coverageHigh{
-    background: #9d9;
-}
-.coverage .coverageIgnore{
+.coverage .coverageIgnore {
     background: #ccc;
 }
-.coverage .coverageLow{
+.coverage .coverageLow,
+.coverage .uncovered {
     background: #ebb;
 }
-.coverage .coverageMedium{
+.coverage .coverageMedium {
     background: #fd7;
 }
 .coverage .footer,
-.coverage .header {
-    background: #ddd;
-}
+.coverage .header,
 .coverage .lineno {
     background: #ddd;
 }
@@ -96,17 +99,15 @@ body {
 .coverage .percentbar div {
     background: #666;
 }
-.coverage .uncovered {
-    background: #dbb;
-}
 
+/* css - coverage_report - important */
 .coverage pre:hover span,
 .coverage tr:hover td {
     background: #7d7;
 }
 .coverage pre:hover span.uncovered,
 .coverage tr:hover td.coverageLow {
-    background: #d99;
+    background: #f99;
 }
 </style>
 </head>
@@ -119,6 +120,7 @@ body {
     <tr>
     <th>Files covered</th>
     <th>Lines</th>
+    <th>Remaining</th>
     </tr>
 </thead>
 <tbody>
@@ -132,6 +134,10 @@ body {
     <td style="text-align: right;">
          98.57 %<br>
         69 / 70
+    </td>
+    <td style="text-align: right;">
+        <br>
+        1 / 70
     </td>
     </tr>
 </tbody>
@@ -192,7 +198,7 @@ body {
 <pre><span class="lineno"><a href="#line_50" id="line_50">   50.</a></span><span class="count                ">      1</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_51" id="line_51">   51.</a></span><span class="count                ">      1</span><span>    it('should retrieve all inserted values', function(done) {</span></pre>
 <pre><span class="lineno"><a href="#line_52" id="line_52">   52.</a></span><span class="count                ">      1</span><span>        db.all("SELECT txt, num FROM foo ORDER BY num", function(err, rows) {</span></pre>
-<pre><span class="lineno"><a href="#line_53" id="line_53">   53.</a></span><span class="count                uncovered">      0</span><span>            if (err) </span><span class="uncovered">throw err;</span></pre>
+<pre><span class="lineno"><a href="#line_53" id="line_53">   53.</a></span><span class="count                uncovered">     -0</span><span>            if (err) </span><span class="uncovered">throw err;</span></pre>
 <pre><span class="lineno"><a href="#line_54" id="line_54">   54.</a></span><span class="count                ">      1</span><span>            assert.equal(rows[0].txt, "Lorem Ipsum");</span></pre>
 <pre><span class="lineno"><a href="#line_55" id="line_55">   55.</a></span><span class="count                ">      1</span><span>            assert.equal(rows[0].num, 1);</span></pre>
 <pre><span class="lineno"><a href="#line_56" id="line_56">   56.</a></span><span class="count                ">      1</span><span>            assert.equal(rows[1].txt, "Dolor Sit Amet");</span></pre>

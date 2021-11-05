@@ -47,5 +47,5 @@ import fs from "fs";
     console.error("wrote file .artifact/jslint_report_hello.html");
 }());
 
-' 2>&1 | head -n 100
+' 2>&1 | head -n 32
 )

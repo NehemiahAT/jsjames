@@ -10,6 +10,8 @@ box-sizing: border-box;
     font-family: consolas, menlo, monospace;
 }
 /*csslint ignore:end*/
+
+/* css - coverage_report - general */
 body {
     margin: 0;
 }
@@ -22,8 +24,9 @@ body {
 .coverage td,
 .coverage th {
     border: 1px solid #777;
+    line-height: 20px;
     margin: 0;
-    padding: 5px;
+    padding: 5px 10px;
 }
 .coverage td span {
     display: inline-block;
@@ -63,30 +66,30 @@ body {
     margin-bottom: 10px;
 }
 
+/* css - coverage_report - color */
 .coverage td,
 .coverage th {
     background: #fff;
 }
+.coverage .count,
+.coverage .coverageHigh {
+    background: #9d9;
+}
 .coverage .count {
-    background: #9d9;
-    color: #777;
+    color: #666;
 }
-.coverage .coverageHigh{
-    background: #9d9;
-}
-.coverage .coverageIgnore{
+.coverage .coverageIgnore {
     background: #ccc;
 }
-.coverage .coverageLow{
+.coverage .coverageLow,
+.coverage .uncovered {
     background: #ebb;
 }
-.coverage .coverageMedium{
+.coverage .coverageMedium {
     background: #fd7;
 }
 .coverage .footer,
-.coverage .header {
-    background: #ddd;
-}
+.coverage .header,
 .coverage .lineno {
     background: #ddd;
 }
@@ -96,17 +99,15 @@ body {
 .coverage .percentbar div {
     background: #666;
 }
-.coverage .uncovered {
-    background: #dbb;
-}
 
+/* css - coverage_report - important */
 .coverage pre:hover span,
 .coverage tr:hover td {
     background: #7d7;
 }
 .coverage pre:hover span.uncovered,
 .coverage tr:hover td.coverageLow {
-    background: #d99;
+    background: #f99;
 }
 </style>
 </head>
@@ -119,6 +120,7 @@ body {
     <tr>
     <th>Files covered</th>
     <th>Lines</th>
+    <th>Remaining</th>
     </tr>
 </thead>
 <tbody>
@@ -133,6 +135,10 @@ body {
          97.08 %<br>
         200 / 206
     </td>
+    <td style="text-align: right;">
+        <br>
+        6 / 206
+    </td>
     </tr>
 </tbody>
 </table>
@@ -146,9 +152,9 @@ body {
 <pre><span class="lineno"><a href="#line_4" id="line_4">    4.</a></span><span class="count                ">      2</span><span>module.exports = exports = sqlite3;</span></pre>
 <pre><span class="lineno"><a href="#line_5" id="line_5">    5.</a></span><span class="count                ">      2</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_6" id="line_6">    6.</a></span><span class="count                ">     12</span><span>function normalizeMethod (fn) {</span></pre>
-<pre><span class="lineno"><a href="#line_7" id="line_7">    7.</a></span><span class="count                ">   3652</span><span>    return function (sql) {</span></pre>
-<pre><span class="lineno"><a href="#line_8" id="line_8">    8.</a></span><span class="count                ">   3652</span><span>        var errBack;</span></pre>
-<pre><span class="lineno"><a href="#line_9" id="line_9">    9.</a></span><span class="count                ">   3652</span><span>        var args = Array.prototype.slice.call(arguments, 1);</span></pre>
+<pre><span class="lineno"><a href="#line_7" id="line_7">    7.</a></span><span class="count                ">   4087</span><span>    return function (sql) {</span></pre>
+<pre><span class="lineno"><a href="#line_8" id="line_8">    8.</a></span><span class="count                ">   4087</span><span>        var errBack;</span></pre>
+<pre><span class="lineno"><a href="#line_9" id="line_9">    9.</a></span><span class="count                ">   4087</span><span>        var args = Array.prototype.slice.call(arguments, 1);</span></pre>
 <pre><span class="lineno"><a href="#line_10" id="line_10">   10.</a></span><span class="count                ">   1117</span><span>        if (typeof args[args.length - 1] === 'function') {</span></pre>
 <pre><span class="lineno"><a href="#line_11" id="line_11">   11.</a></span><span class="count                ">   1117</span><span>            var callback = args[args.length - 1];</span></pre>
 <pre><span class="lineno"><a href="#line_12" id="line_12">   12.</a></span><span class="count                ">   1117</span><span>            errBack = function(err) {</span></pre>
@@ -157,9 +163,9 @@ body {
 <pre><span class="lineno"><a href="#line_15" id="line_15">   15.</a></span><span class="count                ">   1117</span><span>                }</span></pre>
 <pre><span class="lineno"><a href="#line_16" id="line_16">   16.</a></span><span class="count                ">   1117</span><span>            };</span></pre>
 <pre><span class="lineno"><a href="#line_17" id="line_17">   17.</a></span><span class="count                ">   1117</span><span>        }</span></pre>
-<pre><span class="lineno"><a href="#line_18" id="line_18">   18.</a></span><span class="count                ">   3652</span><span>        var statement = new Statement(this, sql, errBack);</span></pre>
-<pre><span class="lineno"><a href="#line_19" id="line_19">   19.</a></span><span class="count                ">   3652</span><span>        return fn.call(this, statement, args);</span></pre>
-<pre><span class="lineno"><a href="#line_20" id="line_20">   20.</a></span><span class="count                ">   3652</span><span>    };</span></pre>
+<pre><span class="lineno"><a href="#line_18" id="line_18">   18.</a></span><span class="count                ">   4087</span><span>        var statement = new Statement(this, sql, errBack);</span></pre>
+<pre><span class="lineno"><a href="#line_19" id="line_19">   19.</a></span><span class="count                ">   4087</span><span>        return fn.call(this, statement, args);</span></pre>
+<pre><span class="lineno"><a href="#line_20" id="line_20">   20.</a></span><span class="count                ">   4087</span><span>    };</span></pre>
 <pre><span class="lineno"><a href="#line_21" id="line_21">   21.</a></span><span class="count                ">     12</span><span>}</span></pre>
 <pre><span class="lineno"><a href="#line_22" id="line_22">   22.</a></span><span class="count                ">      2</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_23" id="line_23">   23.</a></span><span class="count                ">      6</span><span>function inherits(target, source) {</span></pre>
@@ -169,10 +175,10 @@ body {
 <pre><span class="lineno"><a href="#line_27" id="line_27">   27.</a></span><span class="count                ">      2</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_28" id="line_28">   28.</a></span><span class="count                ">      2</span><span>sqlite3.cached = {</span></pre>
 <pre><span class="lineno"><a href="#line_29" id="line_29">   29.</a></span><span class="count                ">      4</span><span>    Database: function(file, a, b) {</span></pre>
-<pre><span class="lineno"><a href="#line_30" id="line_30">   30.</a></span><span class="count                uncovered">      0</span><span>        if (file === '' || file === ':memory:') </span><span class="uncovered">{</span></pre>
-<pre><span class="lineno"><a href="#line_31" id="line_31">   31.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">            // Don't cache special databases.</span></pre>
-<pre><span class="lineno"><a href="#line_32" id="line_32">   32.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">            return new Database(file, a, b);</span></pre>
-<pre><span class="lineno"><a href="#line_33" id="line_33">   33.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">        }</span></pre>
+<pre><span class="lineno"><a href="#line_30" id="line_30">   30.</a></span><span class="count                uncovered">     -0</span><span>        if (file === '' || file === ':memory:') </span><span class="uncovered">{</span></pre>
+<pre><span class="lineno"><a href="#line_31" id="line_31">   31.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">            // Don't cache special databases.</span></pre>
+<pre><span class="lineno"><a href="#line_32" id="line_32">   32.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">            return new Database(file, a, b);</span></pre>
+<pre><span class="lineno"><a href="#line_33" id="line_33">   33.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">        }</span></pre>
 <pre><span class="lineno"><a href="#line_34" id="line_34">   34.</a></span><span class="count                ">      4</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_35" id="line_35">   35.</a></span><span class="count                ">      4</span><span>        var db;</span></pre>
 <pre><span class="lineno"><a href="#line_36" id="line_36">   36.</a></span><span class="count                ">      4</span><span>        file = path.resolve(file);</span></pre>
@@ -184,7 +190,7 @@ body {
 <pre><span class="lineno"><a href="#line_42" id="line_42">   42.</a></span><span class="count                ">      2</span><span>        else {</span></pre>
 <pre><span class="lineno"><a href="#line_43" id="line_43">   43.</a></span><span class="count                ">      2</span><span>            // Make sure the callback is called.</span></pre>
 <pre><span class="lineno"><a href="#line_44" id="line_44">   44.</a></span><span class="count                ">      2</span><span>            db = sqlite3.cached.objects[file];</span></pre>
-<pre><span class="lineno"><a href="#line_45" id="line_45">   45.</a></span><span class="count                uncovered">      0</span><span>            var callback = (typeof a === 'number') </span><span class="uncovered">? b</span><span> : a;</span></pre>
+<pre><span class="lineno"><a href="#line_45" id="line_45">   45.</a></span><span class="count                uncovered">     -0</span><span>            var callback = (typeof a === 'number') </span><span class="uncovered">? b</span><span> : a;</span></pre>
 <pre><span class="lineno"><a href="#line_46" id="line_46">   46.</a></span><span class="count                ">      2</span><span>            if (typeof callback === 'function') {</span></pre>
 <pre><span class="lineno"><a href="#line_47" id="line_47">   47.</a></span><span class="count                ">      2</span><span>                if (db.open) process.nextTick(cb);</span></pre>
 <pre><span class="lineno"><a href="#line_48" id="line_48">   48.</a></span><span class="count                ">      2</span><span>                else db.once('open', cb);</span></pre>
@@ -206,11 +212,11 @@ body {
 <pre><span class="lineno"><a href="#line_64" id="line_64">   64.</a></span><span class="count                ">      2</span><span>inherits(Backup, EventEmitter);</span></pre>
 <pre><span class="lineno"><a href="#line_65" id="line_65">   65.</a></span><span class="count                ">      2</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_66" id="line_66">   66.</a></span><span class="count                ">      2</span><span>// Database#prepare(sql, [bind1, bind2, ...], [callback])</span></pre>
-<pre><span class="lineno"><a href="#line_67" id="line_67">   67.</a></span><span class="count                ">   1527</span><span>Database.prototype.prepare = normalizeMethod(function(statement, params) {</span></pre>
-<pre><span class="lineno"><a href="#line_68" id="line_68">   68.</a></span><span class="count                ">   1527</span><span>    return params.length</span></pre>
+<pre><span class="lineno"><a href="#line_67" id="line_67">   67.</a></span><span class="count                ">   1962</span><span>Database.prototype.prepare = normalizeMethod(function(statement, params) {</span></pre>
+<pre><span class="lineno"><a href="#line_68" id="line_68">   68.</a></span><span class="count                ">   1962</span><span>    return params.length</span></pre>
 <pre><span class="lineno"><a href="#line_69" id="line_69">   69.</a></span><span class="count                ">      7</span><span>        ? statement.bind.apply(statement, params)</span></pre>
-<pre><span class="lineno"><a href="#line_70" id="line_70">   70.</a></span><span class="count                ">   1520</span><span>        : statement;</span></pre>
-<pre><span class="lineno"><a href="#line_71" id="line_71">   71.</a></span><span class="count                ">   1527</span><span>});</span></pre>
+<pre><span class="lineno"><a href="#line_70" id="line_70">   70.</a></span><span class="count                ">   1955</span><span>        : statement;</span></pre>
+<pre><span class="lineno"><a href="#line_71" id="line_71">   71.</a></span><span class="count                ">   1962</span><span>});</span></pre>
 <pre><span class="lineno"><a href="#line_72" id="line_72">   72.</a></span><span class="count                ">      2</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_73" id="line_73">   73.</a></span><span class="count                ">      2</span><span>// Database#run(sql, [bind1, bind2, ...], [callback])</span></pre>
 <pre><span class="lineno"><a href="#line_74" id="line_74">   74.</a></span><span class="count                ">   2072</span><span>Database.prototype.run = normalizeMethod(function(statement, params) {</span></pre>
@@ -262,7 +268,7 @@ body {
 <pre><span class="lineno"><a href="#line_120" id="line_120">  120.</a></span><span class="count                ">      2</span><span>    var params = Array.prototype.slice.call(arguments);</span></pre>
 <pre><span class="lineno"><a href="#line_121" id="line_121">  121.</a></span><span class="count                ">      2</span><span>    var callback = params.pop();</span></pre>
 <pre><span class="lineno"><a href="#line_122" id="line_122">  122.</a></span><span class="count                ">      2</span><span>    params.push(function(err, rows) {</span></pre>
-<pre><span class="lineno"><a href="#line_123" id="line_123">  123.</a></span><span class="count                uncovered">      0</span><span>        if (err) </span><span class="uncovered">return callback(err);</span></pre>
+<pre><span class="lineno"><a href="#line_123" id="line_123">  123.</a></span><span class="count                uncovered">     -0</span><span>        if (err) </span><span class="uncovered">return callback(err);</span></pre>
 <pre><span class="lineno"><a href="#line_124" id="line_124">  124.</a></span><span class="count                ">      2</span><span>        var result = {};</span></pre>
 <pre><span class="lineno"><a href="#line_125" id="line_125">  125.</a></span><span class="count                ">      2</span><span>        if (rows.length) {</span></pre>
 <pre><span class="lineno"><a href="#line_126" id="line_126">  126.</a></span><span class="count                ">      2</span><span>            var keys = Object.keys(rows[0]), key = keys[0];</span></pre>

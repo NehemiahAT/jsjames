@@ -1768,6 +1768,10 @@ await assertErrorThrownAsync(function () {
 </span>    let cwd;
     let exitCode = 0;
     let fileDict;
+    let fileExcludeList = [];
+    let fileIncludeList = [];
+    let fileIncludeNodeModules;
+    let processArgElem;
     let promiseList = [];
     let v8CoverageObj;
 
@@ -1796,6 +1800,8 @@ box-sizing: border-box;
     font-family: consolas, menlo, monospace;
 }
 /*csslint ignore:end*/
+
+/* css - coverage_report - general */
 body {
     margin: 0;
 }
@@ -1808,8 +1814,9 @@ body {
 .coverage td,
 .coverage th {
     border: 1px solid #777;
+    line-height: 20px;
     margin: 0;
-    padding: 5px;
+    padding: 5px 10px;
 }
 .coverage td span {
     display: inline-block;
@@ -1846,19 +1853,7 @@ body {
 .coverage .title {
     font-size: large;
     font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.coverage td,
-.coverage th {
-    background: #fff;
-}
-.coverage .count {
-    background: #9d9;
-    color: #777;
-}
-.coverage .coverageHigh{
-    background: #...
+...
 }
 </pre></li>
 <li>Example usage:<pre class="apidocCodePre">...
@@ -1869,14 +1864,14 @@ import jslint from "../jslint.mjs";
 
 // Create V8 coverage report from program `npm run test` in javascript.
 
-    await jslint.<span class="apidocCodeKeywordSpan">v8CoverageReportCreate</span>({
-        coverageDir: "../.artifact/coverage_sqlite3_js/",
-        processArgv: ["npm", "run", "test"]
-    });
-}());
-
-'
-```
+await jslint.<span class="apidocCodeKeywordSpan">v8CoverageReportCreate</span>({
+    coverageDir: "../.artifact/coverage_sqlite3_js/",
+    processArgv: [
+        "--include=lib/sqlite3-binding.js,lib/sqlite3.js",
+        "--include=lib/trace.js",
+        "npm", "run", "test"
+    ]
+});
 ...</pre></li>
 
 <li>

@@ -13,6 +13,9 @@ printf '> #!/bin/sh
 > 
 > node ../jslint.mjs \\
 >     v8_coverage_report=../.artifact/coverage_sqlite3_sh/ \\
+>     --exclude-node-modules=true \\
+>     --exclude=test/foo.js,test/bar.js \\
+>     --exclude=test/baz.js \\
 >     npm run test
 
 
@@ -34,5 +37,8 @@ npm install
 
 node ../jslint.mjs \
     v8_coverage_report=../.artifact/coverage_sqlite3_sh/ \
-    npm run test 2>&1 | head -n 100
+    --exclude-node-modules=true \
+    --exclude=test/foo.js,test/bar.js \
+    --exclude=test/baz.js \
+    npm run test 2>&1 | head -n 32
 )

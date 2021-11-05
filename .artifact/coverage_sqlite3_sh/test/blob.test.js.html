@@ -10,6 +10,8 @@ box-sizing: border-box;
     font-family: consolas, menlo, monospace;
 }
 /*csslint ignore:end*/
+
+/* css - coverage_report - general */
 body {
     margin: 0;
 }
@@ -22,8 +24,9 @@ body {
 .coverage td,
 .coverage th {
     border: 1px solid #777;
+    line-height: 20px;
     margin: 0;
-    padding: 5px;
+    padding: 5px 10px;
 }
 .coverage td span {
     display: inline-block;
@@ -63,30 +66,30 @@ body {
     margin-bottom: 10px;
 }
 
+/* css - coverage_report - color */
 .coverage td,
 .coverage th {
     background: #fff;
 }
+.coverage .count,
+.coverage .coverageHigh {
+    background: #9d9;
+}
 .coverage .count {
-    background: #9d9;
-    color: #777;
+    color: #666;
 }
-.coverage .coverageHigh{
-    background: #9d9;
-}
-.coverage .coverageIgnore{
+.coverage .coverageIgnore {
     background: #ccc;
 }
-.coverage .coverageLow{
+.coverage .coverageLow,
+.coverage .uncovered {
     background: #ebb;
 }
-.coverage .coverageMedium{
+.coverage .coverageMedium {
     background: #fd7;
 }
 .coverage .footer,
-.coverage .header {
-    background: #ddd;
-}
+.coverage .header,
 .coverage .lineno {
     background: #ddd;
 }
@@ -96,17 +99,15 @@ body {
 .coverage .percentbar div {
     background: #666;
 }
-.coverage .uncovered {
-    background: #dbb;
-}
 
+/* css - coverage_report - important */
 .coverage pre:hover span,
 .coverage tr:hover td {
     background: #7d7;
 }
 .coverage pre:hover span.uncovered,
 .coverage tr:hover td.coverageLow {
-    background: #d99;
+    background: #f99;
 }
 </style>
 </head>
@@ -119,6 +120,7 @@ body {
     <tr>
     <th>Files covered</th>
     <th>Lines</th>
+    <th>Remaining</th>
     </tr>
 </thead>
 <tbody>
@@ -132,6 +134,10 @@ body {
     <td style="text-align: right;">
          90.90 %<br>
         50 / 55
+    </td>
+    <td style="text-align: right;">
+        <br>
+        5 / 55
     </td>
     </tr>
 </tbody>
@@ -163,7 +169,7 @@ body {
 <pre><span class="lineno"><a href="#line_21" id="line_21">   21.</a></span><span class="count                ">      1</span><span>    it('should insert blobs', function(done) {</span></pre>
 <pre><span class="lineno"><a href="#line_22" id="line_22">   22.</a></span><span class="count                ">     10</span><span>        for (var i = 0; i &lt; total; i++) {</span></pre>
 <pre><span class="lineno"><a href="#line_23" id="line_23">   23.</a></span><span class="count                ">     10</span><span>            db.run('INSERT INTO elmos (id, image) VALUES (?, ?)', i, elmo, function(err) {</span></pre>
-<pre><span class="lineno"><a href="#line_24" id="line_24">   24.</a></span><span class="count                uncovered">      0</span><span>                if (err) </span><span class="uncovered">throw err;</span></pre>
+<pre><span class="lineno"><a href="#line_24" id="line_24">   24.</a></span><span class="count                uncovered">     -0</span><span>                if (err) </span><span class="uncovered">throw err;</span></pre>
 <pre><span class="lineno"><a href="#line_25" id="line_25">   25.</a></span><span class="count                ">     10</span><span>                inserted++;</span></pre>
 <pre><span class="lineno"><a href="#line_26" id="line_26">   26.</a></span><span class="count                ">     10</span><span>            });</span></pre>
 <pre><span class="lineno"><a href="#line_27" id="line_27">   27.</a></span><span class="count                ">     10</span><span>        }</span></pre>
@@ -175,15 +181,15 @@ body {
 <pre><span class="lineno"><a href="#line_33" id="line_33">   33.</a></span><span class="count                ">      1</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_34" id="line_34">   34.</a></span><span class="count                ">      1</span><span>    it('should retrieve the blobs', function(done) {</span></pre>
 <pre><span class="lineno"><a href="#line_35" id="line_35">   35.</a></span><span class="count                ">      1</span><span>        db.all('SELECT id, image FROM elmos ORDER BY id', function(err, rows) {</span></pre>
-<pre><span class="lineno"><a href="#line_36" id="line_36">   36.</a></span><span class="count                uncovered">      0</span><span>            if (err) </span><span class="uncovered">throw err;</span></pre>
+<pre><span class="lineno"><a href="#line_36" id="line_36">   36.</a></span><span class="count                uncovered">     -0</span><span>            if (err) </span><span class="uncovered">throw err;</span></pre>
 <pre><span class="lineno"><a href="#line_37" id="line_37">   37.</a></span><span class="count                ">     10</span><span>            for (var i = 0; i &lt; rows.length; i++) {</span></pre>
 <pre><span class="lineno"><a href="#line_38" id="line_38">   38.</a></span><span class="count                ">     10</span><span>                assert.ok(Buffer.isBuffer(rows[i].image));</span></pre>
 <pre><span class="lineno"><a href="#line_39" id="line_39">   39.</a></span><span class="count                ">     10</span><span>                assert.ok(elmo.length, rows[i].image);</span></pre>
 <pre><span class="lineno"><a href="#line_40" id="line_40">   40.</a></span><span class="count                ">     10</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_41" id="line_41">   41.</a></span><span class="count                ">1620740</span><span>                for (var j = 0; j &lt; elmo.length; j++) {</span></pre>
-<pre><span class="lineno"><a href="#line_42" id="line_42">   42.</a></span><span class="count                uncovered">      0</span><span>                    if (elmo[j] !== rows[i].image[j]) </span><span class="uncovered">{</span></pre>
-<pre><span class="lineno"><a href="#line_43" id="line_43">   43.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">                        assert.ok(false, "Wrong byte");</span></pre>
-<pre><span class="lineno"><a href="#line_44" id="line_44">   44.</a></span><span class="count                uncovered">      0</span><span></span><span class="uncovered">                    }</span></pre>
+<pre><span class="lineno"><a href="#line_42" id="line_42">   42.</a></span><span class="count                uncovered">     -0</span><span>                    if (elmo[j] !== rows[i].image[j]) </span><span class="uncovered">{</span></pre>
+<pre><span class="lineno"><a href="#line_43" id="line_43">   43.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">                        assert.ok(false, "Wrong byte");</span></pre>
+<pre><span class="lineno"><a href="#line_44" id="line_44">   44.</a></span><span class="count                uncovered">     -0</span><span></span><span class="uncovered">                    }</span></pre>
 <pre><span class="lineno"><a href="#line_45" id="line_45">   45.</a></span><span class="count                ">1620740</span><span>                }</span></pre>
 <pre><span class="lineno"><a href="#line_46" id="line_46">   46.</a></span><span class="count                ">     10</span><span></span></pre>
 <pre><span class="lineno"><a href="#line_47" id="line_47">   47.</a></span><span class="count                ">     10</span><span>                retrieved++;</span></pre>
