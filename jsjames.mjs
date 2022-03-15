@@ -572,7 +572,7 @@ function jslint(
 // personal criticism, it can make your programs better.
 
         case "and":
-            mm = `The '&&' subexpression should be wrapped in parens.`;
+            mm = `This part is needs some parantheses around it.`;
             break;
         case "bad_assignment_a":
             mm = `Bad assignment to '${a}'.`;
@@ -581,7 +581,7 @@ function jslint(
             mm = `Bad directive '${a}'.`;
             break;
         case "bad_get":
-            mm = `A get function takes no parameters.`;
+            mm = `You can't have parameters on a get function.`;
             break;
         case "bad_module_name_a":
             mm = `Bad module name '${a}'.`;
@@ -590,7 +590,7 @@ function jslint(
             mm = `Bad option '${a}'.`;
             break;
         case "bad_set":
-            mm = `A set function takes one parameter.`;
+            mm = `You can only have one parameter for a set function.`;
             break;
         case "duplicate_a":
             mm = `Duplicate '${a}'.`;
@@ -602,10 +602,10 @@ function jslint(
             mm = `Expected '${a}'.`;
             break;
         case "expected_a_at_b_c":
-            mm = `Expected '${a}' at column ${b}, not column ${c}.`;
+            mm = `'${a}' doesn't belong here. Try '${c}'.`;
             break;
         case "expected_a_b":
-            mm = `Expected '${a}' and instead saw '${b}'.`;
+            mm = `'${a}' doesn't belong here. Try '${c}'.`;
             break;
         case "expected_a_b_before_c_d":
             mm = `Expected ${a} '${b}' to be ordered before ${c} '${d}'.`;
@@ -617,34 +617,34 @@ function jslint(
             );
             break;
         case "expected_a_before_b":
-            mm = `Expected '${a}' before '${b}'.`;
+            mm = `'${b}' doesn't work without '${a}' before it.`;
             break;
         case "expected_digits_after_a":
-            mm = `Expected digits after '${a}'.`;
+            mm = `'${a}' doesn't work without digits after it.`;
             break;
         case "expected_four_digits":
-            mm = `Expected four digits after '\\u'.`;
+            mm = `'\\u' doesn't work without four digits after it.`;
             break;
         case "expected_identifier_a":
-            mm = `Expected an identifier and instead saw '${a}'.`;
+            mm = `We need an identifier here, not '${a}'.`;
             break;
         case "expected_line_break_a_b":
-            mm = `Expected a line break between '${a}' and '${b}'.`;
+            mm = `We need line break between '${a}' and '${b}'.`;
             break;
         case "expected_regexp_factor_a":
-            mm = `Expected a regexp factor and instead saw '${a}'.`;
+            mm = `We need a regexp factor here, not '${a}'.`;
             break;
         case "expected_space_a_b":
-            mm = `Expected one space between '${a}' and '${b}'.`;
+            mm = `We just need one space between '${a}' and '${b}'.`;
             break;
         case "expected_statements_a":
-            mm = `Expected statements before '${a}'.`;
+            mm = `'${a}' doesn't work without some statements before it.`;
             break;
         case "expected_string_a":
-            mm = `Expected a string and instead saw '${a}'.`;
+            mm = `We need a string here, not '${a}'.`;
             break;
         case "expected_type_string_a":
-            mm = `Expected a type string and instead saw '${a}'.`;
+            mm = `We need a type string here, not '${a}'.`;
             break;
         case "freeze_exports":
             mm = (
